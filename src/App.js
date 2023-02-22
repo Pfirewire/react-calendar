@@ -9,12 +9,16 @@ function App() {
     useEffect(() => {
         const timer = setInterval(() => {
             dispatch(updateCurrentDateAndTime());
-        }, 500);
+        }, (0.5 * 1000));
+        return () => {
+            clearInterval(timer);
+        };
     }, [dateAndTime]);
 
     return(
         <div>
-            {dateAndTime.second}
+            {`${dateAndTime.dayString}, ${dateAndTime.monthString} ${dateAndTime.day} ${dateAndTime.prettyHour}:${dateAndTime.prettyMinute}:${dateAndTime.prettySecond}`}
+
         </div>
     );
 }
