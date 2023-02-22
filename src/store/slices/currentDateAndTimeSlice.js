@@ -6,6 +6,12 @@ const currentDateAndTimeSlice = createSlice({
     initialState: {
         dateAndTime: convertDateAndTime(new Date())
     },
+    reducers: {
+        updateCurrentDateAndTime(state, action) {
+            state.dateAndTime = convertDateAndTime(new Date());
+        },
+    },
 });
 
+export const { updateCurrentDateAndTime } = currentDateAndTimeSlice.actions;
 export const currentDateAndTimeReducer = currentDateAndTimeSlice.reducer;
