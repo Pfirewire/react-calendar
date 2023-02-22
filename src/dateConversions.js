@@ -53,7 +53,6 @@ function convertDayToString(day) {
 }
 
 function convertDateAndTime(date) {
-
     return {
         year: date.getFullYear(),
         month: date.getMonth(),
@@ -63,5 +62,8 @@ function convertDateAndTime(date) {
         dayOfWeek: date.getDay(),
         hour: date.getHours(),
         minute: date.getMinutes(),
+        second: date.getSeconds(),
     }
 }
+
+export { convertDateAndTime };
