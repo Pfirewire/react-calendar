@@ -16,8 +16,9 @@ function MonthPage() {
     };
 
     return(
-        <div>
+        <div className='flex flex-col'>
             <div className='flex align-center justify-between'>
+                <div></div>
                 {`${dateAndTime.monthString} ${dateAndTime.year}`}
                 <div className='flex flex-row justify-center'>
                     <Button>
@@ -27,6 +28,9 @@ function MonthPage() {
                         <GoArrowRight onClick={handleNextMonth} />
                     </Button>
                 </div>
+            </div>
+            <div>
+                Month View
             </div>
         </div>
     );
