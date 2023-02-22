@@ -8,18 +8,17 @@ function MonthPage() {
     const dateAndTime = useSelector(state => state.selectedDateAndTime.dateAndTime);
 
     const handlePrevMonth = () => {
-
+        dispatch(decrementMonth());
     };
 
     const handleNextMonth = () => {
         dispatch(incrementMonth());
-        console.log(dateAndTime);
     };
 
     return(
         <div>
             <div className='flex align-center justify-between'>
-                {dateAndTime.monthString}
+                {`${dateAndTime.monthString} ${dateAndTime.year}`}
                 <div className='flex flex-row justify-center'>
                     <Button>
                         <GoArrowLeft onClick={handlePrevMonth} />

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCurrentDateAndTime } from "./store";
+import { convertDateAndTime } from "./dateConversions";
 import Sidebar from "./components/Sidebar";
 import Route from "./components/Route";
 import MonthPage from "./components/month/MonthPage";
@@ -9,7 +10,10 @@ import DayPage from "./components/day/DayPage";
 
 function App() {
     const dispatch = useDispatch();
-    const { dateAndTime } = useSelector((state) => state.currentDateAndTime);
+    const currentDateAndTime = useSelector((state) => {
+        console.log(state.currentDateAndTime.dateAndTime);
+        return state.currentDateAndTime.dateAndTime;
+    });
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -18,12 +22,12 @@ function App() {
         return () => {
             clearInterval(timer);
         };
-    }, [dateAndTime]);
+    }, [currentDateAndTime]);
 
     return(
         <div>
             <div className='flex justify-center'>
-                {`${dateAndTime.dayString}, ${dateAndTime.monthString} ${dateAndTime.day} ${dateAndTime.prettyHour}:${dateAndTime.prettyMinute}:${dateAndTime.prettySecond}`}
+                {`${currentDateAndTime.dayString}, ${currentDateAndTime.monthString} ${currentDateAndTime.day} ${currentDateAndTime.prettyHour}:${currentDateAndTime.prettyMinute}:${currentDateAndTime.prettySecond}`}
             </div>
             <div className='container mx-auto grid grid-cols-6 gap-4 mt-4'>
                 <Sidebar />

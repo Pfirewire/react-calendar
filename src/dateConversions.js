@@ -69,4 +69,15 @@ function convertDateAndTime(date) {
     }
 }
 
-export { convertDateAndTime };
+function getDateObject(dateAndTime) {
+    return new Date(
+        dateAndTime.year,
+        dateAndTime.month,
+        dateAndTime.day,
+        dateAndTime.hour,
+        dateAndTime.minute,
+        dateAndTime.second,
+    );
+}
+
+export { convertDateAndTime, getDateObject };
