@@ -25,10 +25,10 @@ function App() {
     return(
         <div>
             <h3 className='text-2xl font-bold m-2'>
-                {`${currentDateAndTime.dayString}, ${currentDateAndTime.monthString} ${currentDateAndTime.day} ${currentDateAndTime.prettyHour}:${currentDateAndTime.prettyMinute}:${currentDateAndTime.prettySecond}`}
+                {`${currentDateAndTime.dayString}, ${currentDateAndTime.monthString} ${currentDateAndTime.day}, ${currentDateAndTime.prettyHour}:${currentDateAndTime.prettyMinute}:${currentDateAndTime.prettySecond}`}
             </h3>
             <div className='flex flex-row'>
-                <Sidebar className='w-40 mt-16' />
+                <Sidebar className='w-40 mt-24' />
                 <div className='grow flex justify-center'>
                     <Route path='/'>
                         <MonthPage />

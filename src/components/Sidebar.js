@@ -10,7 +10,7 @@ function Sidebar({ ...rest }) {
 
     const classes = className(
         rest.className,
-        'sticky top-0 overflow-y-scroll flex flex-col items-center'
+        'sticky top-0 overflow-y-scroll flex justify-center'
     )
 
     const renderedLinks = links.map((link) => {
@@ -24,11 +24,13 @@ function Sidebar({ ...rest }) {
                 {link.label}
             </Link>
         );
-    })
+    });
 
     return(
         <div className={classes}>
-            {renderedLinks}
+            <div className='flex flex-col items-start'>
+                {renderedLinks}
+            </div>
         </div>
     );
 }

@@ -33,7 +33,7 @@ function MonthPage() {
 
     return(
         <div className='flex flex-col'>
-            <div className='flex items-center'>
+            <div className='flex items-center mb-8'>
                 <div className='flex-1 flex justify-center mr-auto'></div>
                 <div className='flex-1 flex justify-center text-xl font-bold'>
                     {`${dateAndTime.monthString} ${dateAndTime.year}`}
