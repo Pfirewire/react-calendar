@@ -7,16 +7,15 @@ function MonthDay({ firstWeek, date }) {
     const prettyDate = convertDateAndTime(new Date(date));
     const showMonth = prettyDate.day === 1;
     const classes = className(
-        'border-2 border-slate-400 h-36 w-48',
+        'border-2 border-slate-400 h-32 w-48',
         {
-            'bg-slate-200': prettyDate.month !== month,
+            'bg-gray-200': prettyDate.month !== month,
         }
-
     );
 
     return(
         <div className='mx-auto'>
-            {firstWeek && <div className='flex justify-center'>{prettyDate.dayString}</div>}
+            {firstWeek && <div className='flex justify-center text-lg'>{prettyDate.dayString}</div>}
             <div className={classes}>
                 <div className='flex justify-center'>
                     {showMonth && prettyDate.monthString} {prettyDate.day}

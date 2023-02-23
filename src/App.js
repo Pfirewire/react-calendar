@@ -16,7 +16,7 @@ function App() {
     useEffect(() => {
         const timer = setInterval(() => {
             dispatch(updateCurrentDateAndTime());
-        }, (5 * 60 * 1000));
+        }, (0.1 * 1000));
         return () => {
             clearInterval(timer);
         };
@@ -24,12 +24,12 @@ function App() {
 
     return(
         <div>
-            <div className='flex justify-center'>
+            <h3 className='text-2xl font-bold m-2'>
                 {`${currentDateAndTime.dayString}, ${currentDateAndTime.monthString} ${currentDateAndTime.day} ${currentDateAndTime.prettyHour}:${currentDateAndTime.prettyMinute}:${currentDateAndTime.prettySecond}`}
-            </div>
-            <div className='container mx-auto grid grid-cols-6 gap-4 mt-4'>
-                <Sidebar />
-                <div className='col-span-5'>
+            </h3>
+            <div className='flex flex-row'>
+                <Sidebar className='w-40 mt-16' />
+                <div className='grow flex justify-center'>
                     <Route path='/'>
                         <MonthPage />
                     </Route>
