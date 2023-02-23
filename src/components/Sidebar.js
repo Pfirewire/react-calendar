@@ -11,7 +11,7 @@ function Sidebar({ ...rest }) {
     const classes = className(
         rest.className,
         'sticky top-0 overflow-y-scroll flex justify-center'
-    )
+    );
 
     const renderedLinks = links.map((link) => {
         return (

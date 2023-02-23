@@ -33,16 +33,16 @@ function MonthPage() {
 
     return(
         <div className='flex flex-col'>
-            <div className='flex items-center mb-8'>
+            <div className='flex flex-row items-center mb-8'>
                 <div className='flex-1 flex justify-center mr-auto'></div>
                 <div className='flex-1 flex justify-center text-xl font-bold'>
                     {`${dateAndTime.monthString} ${dateAndTime.year}`}
                 </div>
                 <div className='flex-1 flex flex-row justify-end ml-auto'>
-                    <Button onClick={handlePrevMonth}>
+                    <Button outline primary className='text-black rounded m-1' onClick={handlePrevMonth}>
                         <GoArrowLeft />
                     </Button>
-                    <Button onClick={handleNextMonth}>
+                    <Button outline primary className='text-black rounded m-1' onClick={handleNextMonth}>
                         <GoArrowRight />
                     </Button>
                 </div>
