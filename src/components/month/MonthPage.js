@@ -25,10 +25,8 @@ function MonthPage() {
         monthWeek++;
         do {
             content.push(<MonthWeek key={monthWeek} startDate={tempDate.setDate(tempDate.getDate() + 7)} />);
-            console.log(tempDate);
             monthWeek++;
         } while (tempDate.getMonth() === currentMonth)
-        console.log(content);
         content.pop();
         return(
             <div>

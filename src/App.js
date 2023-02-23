@@ -10,14 +10,13 @@ import DayPage from "./components/day/DayPage";
 function App() {
     const dispatch = useDispatch();
     const currentDateAndTime = useSelector((state) => {
-        console.log(state.currentDateAndTime.dateAndTime);
         return state.currentDateAndTime.dateAndTime;
     });
 
     useEffect(() => {
         const timer = setInterval(() => {
             dispatch(updateCurrentDateAndTime());
-        }, (60 * 1000));
+        }, (0.2 * 1000));
         return () => {
             clearInterval(timer);
         };
