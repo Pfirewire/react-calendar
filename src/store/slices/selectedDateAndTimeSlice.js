@@ -1,10 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {convertDateAndTime, getDateObject} from "../../dateConversions";
 
+const setSelectedDate = (date) => {
+    date.setDate(1);
+    return date;
+};
+
 const selectedDateAndTimeSlice = createSlice({
     name: 'selected',
     initialState: {
-        dateAndTime: convertDateAndTime(new Date()),
+        dateAndTime: convertDateAndTime(setSelectedDate(new Date())),
     },
     reducers: {
         incrementMonth(state, action) {
@@ -15,6 +20,7 @@ const selectedDateAndTimeSlice = createSlice({
             } else {
                 date.setMonth(date.getMonth() + 1);
             }
+            date.setDate(1);
             state.dateAndTime = convertDateAndTime(date);
         },
         decrementMonth(state, action) {
@@ -25,6 +31,7 @@ const selectedDateAndTimeSlice = createSlice({
             } else {
                 date.setMonth(date.getMonth() - 1);
             }
+            date.setDate(1);
             state.dateAndTime = convertDateAndTime(date);
         },
         changeWeek(state, action) {

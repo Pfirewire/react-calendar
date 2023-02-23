@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCurrentDateAndTime } from "./store";
-import { convertDateAndTime } from "./dateConversions";
 import Sidebar from "./components/Sidebar";
 import Route from "./components/Route";
 import MonthPage from "./components/month/MonthPage";
@@ -18,7 +17,7 @@ function App() {
     useEffect(() => {
         const timer = setInterval(() => {
             dispatch(updateCurrentDateAndTime());
-        }, (20 * 1000));
+        }, (60 * 1000));
         return () => {
             clearInterval(timer);
         };
