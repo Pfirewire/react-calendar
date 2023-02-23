@@ -1,12 +1,15 @@
-import {convertDateAndTime} from "../../dateConversions";
+import { convertDateAndTime } from "../../dateConversions";
 
-
-function MonthDay({ date }) {
-    let prettyDate = convertDateAndTime(new Date(date));
+function MonthDay({ firstWeek, date }) {
+    const prettyDate = convertDateAndTime(new Date(date));
+    const showMonth = prettyDate.day === 1;
 
     return(
         <div className='border-2 h-60 w-60'>
-            {prettyDate.dayString} {prettyDate.monthString} {prettyDate.day}
+            {firstWeek && <div className='flex justify-center'>{prettyDate.dayString}</div>}
+            <div className='flex justify-center'>
+                {showMonth && prettyDate.monthString} {prettyDate.day}
+            </div>
         </div>
     )
 }

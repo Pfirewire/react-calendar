@@ -16,7 +16,7 @@ function App() {
     useEffect(() => {
         const timer = setInterval(() => {
             dispatch(updateCurrentDateAndTime());
-        }, (0.2 * 1000));
+        }, (5 * 60 * 1000));
         return () => {
             clearInterval(timer);
         };

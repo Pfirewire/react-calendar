@@ -17,14 +17,14 @@ function MonthPage() {
     };
 
     const renderedWeeks = () => {
-        const tempDate = new Date(dateAndTime.year, dateAndTime.month, dateAndTime.day);
+        let tempDate = new Date(dateAndTime.year, dateAndTime.month, dateAndTime.day);
         const currentMonth = tempDate.getMonth();
         let content = [];
         let monthWeek = 0;
-        content.push(<MonthWeek key={monthWeek} startDate={tempDate.setDate(tempDate.getDate() - tempDate.getDay())} />);
+        content.push(<MonthWeek key={monthWeek} monthWeek={monthWeek+1} startDate={tempDate.setDate(tempDate.getDate() - tempDate.getDay())} />);
         monthWeek++;
         do {
-            content.push(<MonthWeek key={monthWeek} startDate={tempDate.setDate(tempDate.getDate() + 7)} />);
+            content.push(<MonthWeek key={monthWeek} monthWeek={monthWeek+1} startDate={tempDate.setDate(tempDate.getDate() + 7)} />);
             monthWeek++;
         } while (tempDate.getMonth() === currentMonth)
         content.pop();

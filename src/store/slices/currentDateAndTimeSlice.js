@@ -8,7 +8,7 @@ const currentDateAndTimeSlice = createSlice({
     },
     reducers: {
         updateCurrentDateAndTime(state, action) {
-            if(state.dateAndTime.second !== (new Date()).getSeconds()){
+            if(state.dateAndTime.second !== new Date().getSeconds()){
                 state.dateAndTime = convertDateAndTime(new Date());
             }
         },
