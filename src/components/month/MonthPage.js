@@ -28,11 +28,7 @@ function MonthPage() {
             monthWeek++;
         } while (tempDate.getMonth() === currentMonth)
         content.pop();
-        return(
-            <div>
-                {content}
-            </div>
-        );
+        return content;
     };
 
     return(
@@ -50,7 +46,6 @@ function MonthPage() {
                 </div>
             </div>
             <div>
-                Month View
                 {renderedWeeks()}
             </div>
         </div>
