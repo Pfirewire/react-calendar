@@ -1,5 +1,5 @@
 
-
+// returns month string in plain english
 function convertMonthToString(month) {
     switch(month) {
         case 0:
@@ -31,6 +31,7 @@ function convertMonthToString(month) {
     }
 }
 
+// returns day of week string in plain english
 function convertDayToString(day) {
     switch(day) {
         case 0:
@@ -52,6 +53,7 @@ function convertDayToString(day) {
     }
 }
 
+// returns date and time object from JS Date object
 function convertDateAndTime(date) {
     return {
         year: date.getFullYear(),
@@ -69,6 +71,7 @@ function convertDateAndTime(date) {
     }
 }
 
+// converts date and time object to JS Date object
 function getDateObject(dateAndTime) {
     return new Date(
         dateAndTime.year,
