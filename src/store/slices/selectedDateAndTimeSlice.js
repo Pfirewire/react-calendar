@@ -52,7 +52,8 @@ const selectedDateAndTimeSlice = createSlice({
 export const {
     incrementMonth,
     decrementMonth,
-    changeWeek,
+    incrementWeek,
+    decrementWeek,
     changeDay,
     changeTime,
 } = selectedDateAndTimeSlice.actions;
