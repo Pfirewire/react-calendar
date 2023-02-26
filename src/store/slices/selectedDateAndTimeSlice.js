@@ -35,10 +35,14 @@ const selectedDateAndTimeSlice = createSlice({
             state.dateAndTime = convertDateAndTime(date);
         },
         incrementWeek(state, action) {
-
+            let date = getDateObject(state.dateAndTime);
+            date.setDate(date.getDate() + 7);
+            state.dateAndTime = convertDateAndTime(date);
         },
         decrementWeek(state, action) {
-
+            let date = getDateObject(state.dateAndTime);
+            date.setDate(date.getDate() - 7);
+            state.dateAndTime = convertDateAndTime(date);
         },
         changeDay(state, action) {
 
