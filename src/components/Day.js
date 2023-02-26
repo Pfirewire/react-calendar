@@ -1,8 +1,8 @@
-import { convertDateAndTime } from "../../dateConversions";
+import { convertDateAndTime } from "../dateConversions";
 import { useSelector } from "react-redux";
 import className from 'classnames';
 
-function MonthDay({ firstWeek, isSingleWeek, date }) {
+function Day({ firstWeek, isSingleWeek, date }) {
     const { month } = useSelector(state => state.selectedDateAndTime.dateAndTime);
     const prettyDate = convertDateAndTime(new Date(date));
     const showMonth = prettyDate.day === 1;
@@ -27,4 +27,4 @@ function MonthDay({ firstWeek, isSingleWeek, date }) {
     );
 }
 
-export default MonthDay;
+export default Day;

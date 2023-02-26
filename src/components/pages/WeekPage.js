@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { incrementWeek, decrementWeek } from "../../store";
 import Header from "../Header";
-import Week from "../month/Week";
+import Week from "../Week";
 
 function WeekPage() {
     const dispatch = useDispatch();

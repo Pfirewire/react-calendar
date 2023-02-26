@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateCurrentDateAndTime } from "./store";
 import Sidebar from "./components/Sidebar";
 import Route from "./components/Route";
-import MonthPage from "./components/month/MonthPage";
-import WeekPage from "./components/week/WeekPage";
-import DayPage from "./components/day/DayPage";
+import MonthPage from "./components/pages/MonthPage";
+import WeekPage from "./components/pages/WeekPage";
+import DayPage from "./components/pages/DayPage";
 
 function App() {
     const dispatch = useDispatch();

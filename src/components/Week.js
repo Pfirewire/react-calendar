@@ -1,4 +1,4 @@
-import MonthDay from "./MonthDay";
+import Day from "./Day";
 
 function Week({ monthWeek, startDate }) {
     let date = new Date(startDate);
@@ -6,7 +6,7 @@ function Week({ monthWeek, startDate }) {
     let dayOfWeek = 0;
     date.setDate(date.getDate() - 1);
     while(dayOfWeek < 7) {
-        content.push(<MonthDay key={dayOfWeek} firstWeek={monthWeek === 1} isSingleWeek={!monthWeek} date={date} />);
+        content.push(<Day key={dayOfWeek} firstWeek={monthWeek === 1} isSingleWeek={!monthWeek} date={date} />);
         date = new Date(date.setDate(date.getDate() + 1));
         dayOfWeek++;
     }
