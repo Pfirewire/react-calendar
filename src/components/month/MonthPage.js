@@ -1,9 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { incrementMonth, decrementMonth } from "../../store";
-import Button from "../Button";
 import Header from "../Header";
-import MonthWeek from "./MonthWeek";
+import Week from "./Week";
 
 function MonthPage() {
     const dispatch = useDispatch();
@@ -22,10 +20,10 @@ function MonthPage() {
         const currentMonth = tempDate.getMonth();
         let content = [];
         let monthWeek = 0;
-        content.push(<MonthWeek key={monthWeek} monthWeek={monthWeek+1} startDate={tempDate.setDate(tempDate.getDate() - tempDate.getDay())} />);
+        content.push(<Week key={monthWeek} monthWeek={monthWeek+1} startDate={tempDate.setDate(tempDate.getDate() - tempDate.getDay())} />);
         monthWeek++;
         do {
-            content.push(<MonthWeek key={monthWeek} monthWeek={monthWeek+1} startDate={tempDate.setDate(tempDate.getDate() + 7)} />);
+            content.push(<Week key={monthWeek} monthWeek={monthWeek+1} startDate={tempDate.setDate(tempDate.getDate() + 7)} />);
             monthWeek++;
         } while (tempDate.getMonth() === currentMonth)
         content.pop();

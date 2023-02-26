@@ -1,6 +1,6 @@
 import MonthDay from "./MonthDay";
 
-function MonthWeek({ monthWeek, startDate }) {
+function Week({ monthWeek, startDate }) {
     let date = new Date(startDate);
     const content = [];
     let dayOfWeek = 0;
@@ -17,4 +17,4 @@ function MonthWeek({ monthWeek, startDate }) {
     );
 }
 
-export default MonthWeek;
+export default Week;
