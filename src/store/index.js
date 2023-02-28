@@ -1,6 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { currentDateAndTimeReducer, updateCurrentDateAndTime } from "./slices/currentDateAndTimeSlice";
-import { selectedDateAndTimeReducer, incrementMonth, decrementMonth, incrementWeek, decrementWeek, changeDay, changeTime } from "./slices/selectedDateAndTimeSlice";
+import {
+    selectedDateAndTimeReducer,
+    incrementMonth,
+    decrementMonth,
+    incrementWeek,
+    decrementWeek,
+    incrementDay,
+    decrementDay,
+    changeTime
+} from "./slices/selectedDateAndTimeSlice";
 
 const store = configureStore({
     reducer: {
@@ -10,4 +19,14 @@ const store = configureStore({
 });
 
 
-export { store, updateCurrentDateAndTime, incrementMonth, decrementMonth, incrementWeek, decrementWeek, changeDay, changeTime };
+export {
+    store,
+    updateCurrentDateAndTime,
+    incrementMonth,
+    decrementMonth,
+    incrementWeek,
+    decrementWeek,
+    incrementDay,
+    decrementDay,
+    changeTime
+};

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import className from 'classnames';
 
 function Day({ firstWeek, isSingleWeek, isSingleDay, date }) {
-    const { month } = useSelector(state => state.selectedDateAndTime.dateAndTime);
+    const { month, day } = useSelector(state => state.selectedDateAndTime.dateAndTime);
     const prettyDate = convertDateAndTime(new Date(date));
     const showMonth = prettyDate.day === 1;
     const classes = className(
@@ -22,7 +22,8 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date }) {
             {firstWeek && <div className='flex justify-center text-lg'>{prettyDate.dayString}</div>}
             <div className={classes}>
                 <div className='flex justify-center'>
-                    {showMonth && prettyDate.monthString} {prettyDate.day}
+                    {showMonth && prettyDate.monthString} {date && prettyDate.day}
+                    {!date && day}
                 </div>
             </div>
         </div>
