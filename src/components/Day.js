@@ -2,7 +2,7 @@ import { convertDateAndTime } from "../dateConversions";
 import { useSelector } from "react-redux";
 import className from 'classnames';
 
-function Day({ firstWeek, isSingleWeek, date }) {
+function Day({ firstWeek, isSingleWeek, isSingleDay, date }) {
     const { month } = useSelector(state => state.selectedDateAndTime.dateAndTime);
     const prettyDate = convertDateAndTime(new Date(date));
     const showMonth = prettyDate.day === 1;
@@ -10,6 +10,8 @@ function Day({ firstWeek, isSingleWeek, date }) {
         'border-2 border-slate-400 w-48',
         {
             'bg-gray-200': prettyDate.month !== month,
+            'w-48': !isSingleDay,
+            'w-full': isSingleDay,
             'h-32': !isSingleWeek,
             'h-4/5': isSingleWeek
         }
