@@ -7,18 +7,24 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date }) {
     const prettyDate = convertDateAndTime(new Date(date));
     const showMonth = prettyDate.day === 1;
     const classes = className(
-        'border-2 border-slate-400 w-48',
+        'border-2 border-slate-400',
         {
             'bg-gray-200': prettyDate.month !== month,
             'w-48': !isSingleDay,
             'w-full': isSingleDay,
             'h-32': !isSingleWeek,
-            'h-4/5': isSingleWeek
+            'h-4/5': isSingleWeek || isSingleDay
         }
     );
+    const singleDayClasses = className(
+        'mx-auto h-screen',
+        {
+            'flex-grow': isSingleDay
+        }
+    )
 
     return(
-        <div className='mx-auto h-screen'>
+        <div className={singleDayClasses}>
             {firstWeek && <div className='flex justify-center text-lg'>{prettyDate.dayString}</div>}
             <div className={classes}>
                 <div className='flex justify-center'>

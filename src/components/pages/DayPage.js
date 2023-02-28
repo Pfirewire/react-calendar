@@ -16,9 +16,9 @@ function DayPage() {
     };
 
     return(
-        <div className='flex flex-col'>
+        <div className='flex flex-col flex-grow m-6'>
             <Header handlePrev={handlePrevDay} handleNext={handleNextDay} />
-            <div>
+            <div className='flex justify-center items-center'>
                 <Day isSingleDay />
             </div>
         </div>
