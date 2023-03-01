@@ -2,6 +2,12 @@ import { convertDateAndTime } from "../dateConversions";
 import { useSelector } from "react-redux";
 import className from 'classnames';
 
+// Day Component to show single Day in all pages of calendar
+// Receives props:
+// firstWeek: true if first week of month
+// isSingleWeek: true if called from WeekPage
+// isSingleDay: true if called from DayPage
+// date: date passed in from parent component
 function Day({ firstWeek, isSingleWeek, isSingleDay, date }) {
     const { month, day } = useSelector(state => state.selectedDateAndTime.dateAndTime);
     const prettyDate = convertDateAndTime(new Date(date));
