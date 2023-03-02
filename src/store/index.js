@@ -10,11 +10,13 @@ import {
     decrementDay,
     changeTime
 } from "./slices/selectedDateAndTimeSlice";
+import { appointmentsApi } from "./apis/appointmentsApi";
 
 const store = configureStore({
     reducer: {
         currentDateAndTime: currentDateAndTimeReducer,
         selectedDateAndTime: selectedDateAndTimeReducer,
+        [appointmentsApi.reducerPath]: appointmentsApi.reducer,
     }
 });
 
