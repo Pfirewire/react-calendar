@@ -11,15 +11,22 @@ import {
     changeTime
 } from "./slices/selectedDateAndTimeSlice";
 import { appointmentsApi } from "./apis/appointmentsApi";
+import {setupListeners} from "@reduxjs/toolkit/query";
 
 const store = configureStore({
     reducer: {
         currentDateAndTime: currentDateAndTimeReducer,
         selectedDateAndTime: selectedDateAndTimeReducer,
         [appointmentsApi.reducerPath]: appointmentsApi.reducer,
-    }
+    },
+    middleware: (getDefaultMiddleware) => {
+        return getDefaultMiddleware()
+            .concat(appointmentsApi.middleware)
+        ;
+    },
 });
 
+setupListeners(store.dispatch);
 
 export {
     store,
@@ -32,3 +39,9 @@ export {
     decrementDay,
     changeTime
 };
+export {
+    useFetchAppointmentsQuery,
+    useAddAppointmentMutation,
+    useEditAppointmentMutation,
+    useDeleteAppointmentMutation
+} from './apis/appointmentsApi';
