@@ -30,7 +30,7 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date }) {
     )
 
     return(
-        <div className={(isSingleDay || isSingleWeek) && singleDayClasses}>
+        <div className={(isSingleDay || isSingleWeek) ? singleDayClasses : undefined }>
             {firstWeek && <div className='flex justify-center text-lg'>{prettyDate.dayString}</div>}
             <div className={classes}>
                 <div className='flex justify-center'>
