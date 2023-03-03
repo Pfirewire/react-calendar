@@ -23,11 +23,20 @@ const appointmentsApi = createApi({
             }),
             addAppointment: builder.mutation({
                 invalidatesTags: (result, error, arg) => {
-
+                    return [{ type: 'Appointment', id: arg.id }];
                 },
-                query() {
-
-                },
+                query: ((appointment) => {
+                    return {
+                        url: '/appointments',
+                        method: 'POST',
+                        body: {
+                            title: appointment.title,
+                            date: appointment.date,
+                            duration: appointment.duration,
+                            notes: appointment.notes,
+                        },
+                    };
+                }),
             }),
             editAppointment: builder.mutation({
 
