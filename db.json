@@ -1,3 +1,25 @@
 {
-  "appointments": []
+  "appointments": [
+    {
+      "title": "Test Title",
+      "date": 23,
+      "duration": 60,
+      "notes": "These are some notes. They are a test",
+      "id": 1
+    },
+    {
+      "title": "Test Title",
+      "date": 23,
+      "duration": 60,
+      "notes": "These are some notes. They are a test",
+      "id": 2
+    },
+    {
+      "title": "Test Title",
+      "date": 23,
+      "duration": 60,
+      "notes": "These are some notes. They are a test",
+      "id": 3
+    }
+  ]
 }

@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import { incrementMonth, decrementMonth } from "../../store";
+import { incrementMonth, decrementMonth, useAddAppointmentMutation } from "../../store";
 import Header from "../Header";
 import Week from "../Week";
 
 function MonthPage() {
     const dispatch = useDispatch();
+    const [addAppointment, results] = useAddAppointmentMutation();
     const dateAndTime = useSelector(state => state.selectedDateAndTime.dateAndTime);
 
     const handlePrevMonth = () => {
@@ -13,6 +14,16 @@ function MonthPage() {
 
     const handleNextMonth = () => {
         dispatch(incrementMonth());
+    };
+
+    const handleAddAppointment = () => {
+        const tempAppointment = {
+            title: 'Test Title',
+            date: 23,
+            duration: 60,
+            notes: 'These are some notes. They are a test',
+        };
+        addAppointment(tempAppointment);
     };
 
     const renderedWeeks = () => {
@@ -32,7 +43,7 @@ function MonthPage() {
 
     return(
         <div className='flex flex-col'>
-            <Header handlePrev={handlePrevMonth} handleNext={handleNextMonth} />
+            <Header handlePrev={handlePrevMonth} handleNext={handleNextMonth} handleAdd={handleAddAppointment} />
             <div>
                 {renderedWeeks()}
             </div>
