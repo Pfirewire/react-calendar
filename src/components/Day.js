@@ -18,7 +18,7 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date }) {
             'bg-gray-200': prettyDate.month !== month,
             'w-48': !isSingleDay,
             'w-full': isSingleDay,
-            'h-32': !isSingleWeek,
+            'h-32': !isSingleWeek || !isSingleDay,
             'h-4/5': isSingleWeek || isSingleDay
         }
     );
@@ -30,7 +30,7 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date }) {
     )
 
     return(
-        <div className={singleDayClasses}>
+        <div className={(isSingleDay || isSingleWeek) && singleDayClasses}>
             {firstWeek && <div className='flex justify-center text-lg'>{prettyDate.dayString}</div>}
             <div className={classes}>
                 <div className='flex justify-center'>

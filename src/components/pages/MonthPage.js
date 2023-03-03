@@ -34,21 +34,20 @@ function MonthPage() {
         content.push(<Week key={monthWeek} monthWeek={monthWeek+1} startDate={tempDate.setDate(tempDate.getDate() - tempDate.getDay())} />);
         monthWeek++;
         do {
-            console.log("Inside do while");
-            console.log("Current month: " + currentMonth);
             content.push(<Week key={monthWeek} monthWeek={monthWeek+1} startDate={tempDate.setDate(tempDate.getDate() + 7)} />);
             monthWeek++;
         } while (tempDate.getMonth() === currentMonth)
         content.pop();
-        console.log(content);
         return content;
     };
+
+    const content = renderedWeeks();
 
     return(
         <div className='flex flex-col'>
             <Header handlePrev={handlePrevMonth} handleNext={handleNextMonth} handleAdd={handleAddAppointment} />
             <div>
-                {renderedWeeks()}
+                {content}
             </div>
         </div>
     );
