@@ -8,11 +8,13 @@ import className from 'classnames';
 // isSingleWeek: true if called from WeekPage
 // isSingleDay: true if called from DayPage
 // date: date passed in from parent component
-function Day({ firstWeek, isSingleWeek, isSingleDay, date }) {
+function Day({ firstWeek, isSingleWeek, isSingleDay, date, ...rest }) {
     const { month, day } = useSelector(state => state.selectedDateAndTime.dateAndTime);
     const prettyDate = convertDateAndTime(new Date(date));
     const showMonth = prettyDate.day === 1;
+
     const classes = className(
+        rest.className,
         'border-2 border-slate-400',
         {
             'bg-gray-200': prettyDate.month !== month,
@@ -22,7 +24,9 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date }) {
             'h-4/5': isSingleWeek || isSingleDay
         }
     );
+
     const singleDayClasses = className(
+        rest.className,
         'mx-auto h-screen',
         {
             'flex-grow': isSingleDay

@@ -5,7 +5,6 @@ import Day from '../Day';
 
 function DayPage() {
     const dispatch = useDispatch();
-    const dateAndTime = useSelector(state => state.selectedDateAndTime.dateAndTime);
 
     const handlePrevDay = () => {
         dispatch(decrementDay());
