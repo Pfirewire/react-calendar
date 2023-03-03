@@ -6,31 +6,14 @@ import Route from "./components/Route";
 import MonthPage from "./components/pages/MonthPage";
 import WeekPage from "./components/pages/WeekPage";
 import DayPage from "./components/pages/DayPage";
+import CurrentDateAndTime from "./components/CurrentDateAndTime";
 
 function App() {
-    const dispatch = useDispatch();
-    const currentDateAndTime = useSelector((state) => {
-        return state.currentDateAndTime.dateAndTime;
-    });
-
-    // Function to update current time
-    useEffect(() => {
-        const timer = setInterval(() => {
-            dispatch(updateCurrentDateAndTime());
-        }, (0.1 * 1000));
-        // returns clear interval so setInterval does not run forever and stack
-        return () => {
-            clearInterval(timer);
-        };
-    }, [currentDateAndTime]);
 
     return(
         <div>
 
-            {/*Current Date and Time Header*/}
-            <h3 className='text-2xl font-bold m-2'>
-                {`${currentDateAndTime.dayString}, ${currentDateAndTime.monthString} ${currentDateAndTime.day}, ${currentDateAndTime.prettyHour}:${currentDateAndTime.prettyMinute}:${currentDateAndTime.prettySecond}`}
-            </h3>
+            <CurrentDateAndTime />
             <div className='flex flex-row'>
                 <Sidebar className='w-40 mt-24' />
 
