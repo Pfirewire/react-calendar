@@ -57,7 +57,15 @@ const appointmentsApi = createApi({
                 }),
             }),
             deleteAppointment: builder.mutation({
-
+                invalidatesTags: (result, error, arg) => {
+                    return [{ type: 'Appointment', id: arg.id }];
+                },
+                query: ((appointment) => {
+                    return {
+                        url: `/appointments/${appointment.id}`,
+                        method: 'DELETE',
+                    };
+                }),
             }),
         };
     },
