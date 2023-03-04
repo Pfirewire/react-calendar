@@ -12,6 +12,7 @@ const appointmentsApi = createApi({
                     const tags = result.map((appointment) => {
                         return { type: 'Appointment', id: appointment.id };
                     });
+                    tags.push({ type: 'Appointments', id: 1 });
                     return tags;
                 },
                 query: (() => {
@@ -23,7 +24,7 @@ const appointmentsApi = createApi({
             }),
             addAppointment: builder.mutation({
                 invalidatesTags: (result, error, arg) => {
-                    return [{ type: 'Appointment', id: arg.id }];
+                    return [{ type: 'Appointments', id: 1 }];
                 },
                 query: ((appointment) => {
                     return {
@@ -39,7 +40,21 @@ const appointmentsApi = createApi({
                 }),
             }),
             editAppointment: builder.mutation({
-
+                invalidatesTags: (result, error, arg) => {
+                    return [{ type: 'Appointment', id: arg.id }];
+                },
+                query: ((appointment) => {
+                    return {
+                        url: `/appointments/${appointment.id}`,
+                        method: 'PUT',
+                        body: {
+                            title: appointment.title,
+                            date: appointment.date,
+                            duration: appointment.duration,
+                            notes: appointment.notes,
+                        },
+                    };
+                }),
             }),
             deleteAppointment: builder.mutation({
 
