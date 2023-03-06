@@ -24,7 +24,7 @@ function AddAppointmentModal({ handleClose }) {
     };
 
     const actionBar = (
-        <div>
+        <div className='flex justify-center items-center py-2'>
             <Button onClick={handleAddAppointment} primary>Create Appointment</Button>
         </div>
     );

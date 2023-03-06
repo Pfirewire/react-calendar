@@ -11,20 +11,10 @@ function AppointmentForm({ form, setForm, handleSubmit }) {
     }
 
     return(
-        <div>
-            <h3>Create Appointment</h3>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor='title'>Title</label>
-                    <input
-                        id='title'
-                        type='text'
-                        value={form.title}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div>
-                    <label htmlFor='date'>Date</label>
+        <div className='flex flex-col justify-center items-center w-96'>
+            <h2 className='text-2xl mb-6 w-full text-center'>Create Appointment</h2>
+            <form className='w-full' onSubmit={handleSubmit}>
+                <div className='flex justify-center py-2'>
                     <input
                         id='date'
                         type='date'
@@ -32,18 +22,26 @@ function AppointmentForm({ form, setForm, handleSubmit }) {
                         onChange={handleChange}
                     />
                 </div>
-                <div>
-                    <label htmlFor='notes'>Notes</label>
-                    <textarea
+                <div className='py-2'>
+                    <input className='border-2 w-full'
+                        id='title'
+                        type='text'
+                        placeholder='title'
+                        value={form.title}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className='py-2'>
+                    <textarea className='border-2 w-full'
+                        rows='6'
                         id='notes'
+                        placeholder='notes'
                         value={form.notes}
                         onChange={handleChange}
                     >
-
                     </textarea>
                 </div>
             </form>
-            Appointment Form
         </div>
     );
 }

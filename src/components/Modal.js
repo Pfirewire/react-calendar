@@ -13,10 +13,10 @@ function Modal({ onClose, children, actionBar }) {
     return ReactDOM.createPortal(
         <div>
             <div onClick={onClose} className='fixed inset-0 bg-gray-300 opacity-80'></div>
-            <div className='fixed inset-40 p-10 bg-white'>
+            <div className='absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 p-10 bg-white'>
                 <div className='flex flex-col justify-between h-full'>
                     {children}
-                    <div className='flex justify-end'>
+                    <div>
                         {actionBar}
                     </div>
                 </div>
