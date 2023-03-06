@@ -58,8 +58,10 @@ function convertDateAndTime(date) {
     return {
         year: date.getFullYear(),
         month: date.getMonth(),
+        prettyMonth: (date.getMonth() + 1).toString().padStart(2, '0'),
         monthString: convertMonthToString(date.getMonth()),
         day: date.getDate(),
+        prettyDay: date.getDate().toString().padStart(2, '0'),
         dayString: convertDayToString(date.getDay()),
         dayOfWeek: date.getDay(),
         hour: date.getHours(),

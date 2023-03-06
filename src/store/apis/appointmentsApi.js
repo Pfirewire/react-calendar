@@ -33,6 +33,7 @@ const appointmentsApi = createApi({
                         body: {
                             title: appointment.title,
                             date: appointment.date,
+                            start: appointment.start,
                             duration: appointment.duration,
                             notes: appointment.notes,
                         },
@@ -50,6 +51,7 @@ const appointmentsApi = createApi({
                         body: {
                             title: appointment.title,
                             date: appointment.date,
+                            start: appointment.start,
                             duration: appointment.duration,
                             notes: appointment.notes,
                         },
