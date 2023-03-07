@@ -1,76 +1,6 @@
 {
   "appointments": [
     {
-      "title": "Test Title",
-      "date": 23,
-      "duration": 60,
-      "notes": "These are some notes. They are a test",
-      "id": 1
-    },
-    {
-      "title": "Test Title",
-      "date": 23,
-      "duration": 60,
-      "notes": "These are some notes. They are a test",
-      "id": 2
-    },
-    {
-      "title": "Test Title",
-      "date": 23,
-      "duration": 60,
-      "notes": "These are some notes. They are a test",
-      "id": 3
-    },
-    {
-      "title": "Test Title",
-      "date": 23,
-      "duration": 60,
-      "notes": "These are some notes. They are a test",
-      "id": 4
-    },
-    {
-      "title": "Test Title",
-      "date": 23,
-      "duration": 60,
-      "notes": "These are some notes. They are a test",
-      "id": 5
-    },
-    {
-      "title": "Test Title",
-      "date": 23,
-      "duration": 60,
-      "notes": "These are some notes. They are a test",
-      "id": 6
-    },
-    {
-      "title": "Test Title",
-      "date": 23,
-      "duration": 60,
-      "notes": "These are some notes. They are a test",
-      "id": 7
-    },
-    {
-      "title": "Test Title",
-      "date": 23,
-      "duration": 60,
-      "notes": "These are some notes. They are a test",
-      "id": 8
-    },
-    {
-      "title": "Test Title",
-      "date": 23,
-      "duration": 60,
-      "notes": "These are some notes. They are a test",
-      "id": 9
-    },
-    {
-      "title": "Test Title",
-      "date": 23,
-      "duration": 60,
-      "notes": "These are some notes. They are a test",
-      "id": 10
-    },
-    {
       "title": "test",
       "date": "2023-3-1",
       "duration": 0,
@@ -91,6 +21,22 @@
       "duration": 0,
       "notes": "Another test with correct start time this time hopefully!",
       "id": 13
+    },
+    {
+      "title": "Today's Title",
+      "date": "2023-03-07",
+      "start": "00:00",
+      "duration": 0,
+      "notes": "Hello",
+      "id": 14
+    },
+    {
+      "title": "Another",
+      "date": "2023-04-12",
+      "start": "00:00",
+      "duration": 0,
+      "notes": "Test",
+      "id": 15
     }
   ]
 }

@@ -1,11 +1,14 @@
-import { useDispatch } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { incrementMonth, decrementMonth } from "../../store";
+import { useFetchAppointmentsQuery } from "../../store";
 import Header from "../Header";
 import Month from "../Month";
 
 function MonthPage() {
     const dispatch = useDispatch();
-
+    const { data, error, isFetching } = useFetchAppointmentsQuery();
+    const { year, prettyMonth } = useSelector(state => state.selectedDateAndTime.dateAndTime)
+    console.log(data);
     const handlePrevMonth = () => {
         dispatch(decrementMonth());
     };
@@ -14,10 +17,20 @@ function MonthPage() {
         dispatch(incrementMonth());
     };
 
+    let appointments;
+    if(isFetching) {
+        appointments = [];
+    } else if(error) {
+        appointments = [];
+    } else {
+        appointments = data.filter(appointment => {
+            return appointment.date.includes(`${year}-${prettyMonth}`);
+        });
+    }
     return(
         <div className='flex flex-col'>
             <Header handlePrev={handlePrevMonth} handleNext={handleNextMonth} />
-            <Month />
+            <Month appointments={appointments} />
         </div>
     );
 }

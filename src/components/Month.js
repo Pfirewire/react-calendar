@@ -2,18 +2,28 @@ import Week from "./Week";
 import {useSelector} from "react-redux";
 
 
-function Month() {
+function Month({ appointments }) {
     const dateAndTime = useSelector(state => state.selectedDateAndTime.dateAndTime);
+
+    const weekContainsAppointment = startDate => {
+        console.log(startDate);
+        return appointments.filter(appointment => {
+            return true;
+        });
+    };
 
     const renderedWeeks = () => {
         let tempDate = new Date(dateAndTime.year, dateAndTime.month, dateAndTime.day);
         const currentMonth = tempDate.getMonth();
         let content = [];
         let monthWeek = 0;
-        content.push(<Week key={monthWeek} monthWeek={monthWeek+1} startDate={tempDate.setDate(tempDate.getDate() - tempDate.getDay())} />);
+
+        let startDate = tempDate.setDate(tempDate.getDate() - tempDate.getDay());
+        content.push(<Week key={monthWeek} monthWeek={monthWeek+1} startDate={startDate} />);
         monthWeek++;
         do {
-            content.push(<Week key={monthWeek} monthWeek={monthWeek+1} startDate={tempDate.setDate(tempDate.getDate() + 7)} />);
+            startDate = tempDate.setDate(tempDate.getDate() + 7);
+            content.push(<Week key={monthWeek} monthWeek={monthWeek+1} startDate={startDate} />);
             monthWeek++;
         } while (tempDate.getMonth() === currentMonth)
         content.pop();
