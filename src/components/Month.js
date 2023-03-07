@@ -34,8 +34,7 @@ function Month({ appointments }) {
         <div>
             {renderedWeeks()}
         </div>
-    )
-
+    );
 }
 
 export default Month;
