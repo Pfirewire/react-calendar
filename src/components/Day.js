@@ -1,6 +1,8 @@
 import { convertDateAndTime } from "../dateConversions";
 import { useSelector } from "react-redux";
 import className from 'classnames';
+import Appointment from "./Appointment";
+import AppointmentMini from "./AppointmentMini";
 
 // Day Component to show single Day in all pages of calendar
 // Receives props:
@@ -21,10 +23,17 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date, appointments, ...rest
             'w-48': !isSingleDay,
             'w-full': isSingleDay,
             'h-32': !isSingleWeek || !isSingleDay,
-            'h-4/5': isSingleWeek || isSingleDay,
-            'bg-red-400': appointments.length > 0
+            'h-4/5': isSingleWeek || isSingleDay
         }
     );
+
+    const renderedAppointmentMinis = appointments.map((appointment, index) => {
+        if(isSingleDay || isSingleWeek) {
+            return <Appointment key={index} appointment={appointment} />;
+        } else {
+            return <AppointmentMini key={index} appointment={appointment} />;
+        }
+    });
 
     const singleDayClasses = className(
         rest.className,
@@ -42,6 +51,7 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date, appointments, ...rest
                     {showMonth && prettyDate.monthString} {date && prettyDate.day}
                     {!date && day}
                 </div>
+                {renderedAppointmentMinis}
             </div>
         </div>
     );
