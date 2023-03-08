@@ -45,6 +45,14 @@
       "duration": 0,
       "notes": "TEstsstetstdsre",
       "id": 16
+    },
+    {
+      "title": "Another first",
+      "date": "2023-03-01",
+      "start": "00:00",
+      "duration": 0,
+      "notes": "Hello",
+      "id": 17
     }
   ]
 }
