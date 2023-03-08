@@ -39,7 +39,7 @@ function AddAppointmentModal({ handleClose }) {
         <div>
             {modal}
         </div>
-    )
+    );
 }
 
 export default AddAppointmentModal;
