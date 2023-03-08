@@ -13,12 +13,8 @@ function AppointmentMini({ appointment }) {
         setShowModal(false);
     };
 
-    const openEditAppointment = () => {
-
-    };
-
     return(
-        <div className='flex justify-between w-full bg-green-300 rounded my-1 h-6' onClick={handleOpenModal}>
+        <div className='flex justify-between w-full bg-green-300 rounded my-1 h-6 cursor-pointer' onClick={handleOpenModal}>
             <div className='ml-1 overflow-hidden text-ellipsis'>
                 {appointment.title}
             </div>
