@@ -7,9 +7,20 @@ function Month({ appointments }) {
 
     const weekContainsAppointment = date => {
         const startDate = new Date(date);
-        const endDate = new Date(new Date(date).setDate(new Date(date).getDate() + 6));
+        let endDate = (new Date(new Date(date).setDate(new Date(date).getDate() + 6)));
+        endDate.setHours(23);
+        endDate.setMinutes(59);
         const trimmedAppointments = appointments.filter(appointment => {
-            const appointmentDate = new Date(appointment.date);
+            let appointmentDate = new Date(appointment.date);
+            appointmentDate.setHours(0);
+            appointmentDate.setMinutes(0);
+            console.log("Appointment:");
+            console.log(appointment);
+            console.log("Appointment Date");
+            console.log(appointmentDate);
+            console.log("Start and End Dates");
+            console.log(startDate);
+            console.log(endDate);
             return appointmentDate >= startDate && appointmentDate <= endDate;
         });
         return trimmedAppointments;

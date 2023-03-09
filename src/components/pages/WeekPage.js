@@ -5,11 +5,9 @@ import Week from "../Week";
 
 function WeekPage() {
     const dispatch = useDispatch();
-    const tempDate = useSelector(state => {
-        const dateAndTime = state.selectedDateAndTime.dateAndTime;
-        return new Date(dateAndTime.year, dateAndTime.month, dateAndTime.day);
-    });
+    const dateAndTime = useSelector(state => state.selectedDateAndTime.dateAndTime);
     const { data, error, isFetching } = useFetchAppointmentsQuery();
+    const tempDate = new Date(dateAndTime.year, dateAndTime.month, dateAndTime.day);
 
     const handlePrevWeek = () => {
         dispatch(decrementWeek());
@@ -21,16 +19,20 @@ function WeekPage() {
 
     const renderAppointments = () => {
         let appointmentList = [];
-        let date = new Date(new Date(tempDate.getFullYear(), tempDate.getMonth(), tempDate.getDate()).setDate(tempDate.getDate() - tempDate.getDay()));
-        for(let i = 0; i < 7; i++) {
-            appointmentList.push(...(data.filter(appointment => {
+        appointmentList.push(...(data.filter(appointment => {
+            let contains = false;
+            let date = new Date(new Date(tempDate.getFullYear(), tempDate.getMonth(), tempDate.getDate()).setDate(tempDate.getDate() - tempDate.getDay()));
+            for(let i = 0; i < 7; i++) {
                 const appointmentDate = new Date(appointment.date);
-                return date.getFullYear() === appointmentDate.getFullYear() &&
+                if(date.getFullYear() === appointmentDate.getFullYear() &&
                     date.getMonth() === appointmentDate.getMonth() &&
-                    date.getDate() === appointmentDate.getDate();
-            })));
-            date = new Date(date.setDate(date.getDate() + 1));
-        }
+                    date.getDate() === appointmentDate.getDate()) {
+                    contains = true;
+                }
+                date = new Date(date.setDate(date.getDate() + 1));
+            }
+            return contains;
+        })));
         return appointmentList;
     };
 
@@ -41,7 +43,6 @@ function WeekPage() {
         appointments = [];
     } else {
         appointments = renderAppointments();
-        console.log(appointments);
     }
 
     return(
