@@ -14,7 +14,6 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date, appointments, ...rest
     const { month, day } = useSelector(state => state.selectedDateAndTime.dateAndTime);
     const prettyDate = convertDateAndTime(new Date(date));
     const showMonth = prettyDate.day === 1;
-    console.log(appointments);
     const classes = className(
         rest.className,
         'border-2 border-slate-400',

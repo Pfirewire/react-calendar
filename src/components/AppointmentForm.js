@@ -1,7 +1,6 @@
 
 
 function AppointmentForm({ form, setForm, handleSubmit }) {
-    console.log(form);
 
     const handleChange = e => {
         setForm({

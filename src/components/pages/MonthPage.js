@@ -8,7 +8,6 @@ function MonthPage() {
     const dispatch = useDispatch();
     const { data, error, isFetching } = useFetchAppointmentsQuery();
     const { year, prettyMonth } = useSelector(state => state.selectedDateAndTime.dateAndTime)
-    console.log(data);
     const handlePrevMonth = () => {
         dispatch(decrementMonth());
     };
