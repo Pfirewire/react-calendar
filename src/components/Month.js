@@ -14,15 +14,9 @@ function Month({ appointments }) {
             let appointmentDate = new Date(appointment.date);
             appointmentDate.setHours(0);
             appointmentDate.setMinutes(0);
-            console.log("Appointment:");
-            console.log(appointment);
-            console.log("Appointment Date");
-            console.log(appointmentDate);
-            console.log("Start and End Dates");
-            console.log(startDate);
-            console.log(endDate);
             return appointmentDate >= startDate && appointmentDate <= endDate;
         });
+        console.log(trimmedAppointments);
         return trimmedAppointments;
     };
 

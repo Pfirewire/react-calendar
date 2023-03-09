@@ -18,8 +18,7 @@ function WeekPage() {
     };
 
     const renderAppointments = () => {
-        let appointmentList = [];
-        appointmentList.push(...(data.filter(appointment => {
+        return data.filter(appointment => {
             let contains = false;
             let date = new Date(new Date(tempDate.getFullYear(), tempDate.getMonth(), tempDate.getDate()).setDate(tempDate.getDate() - tempDate.getDay()));
             for(let i = 0; i < 7; i++) {
@@ -32,8 +31,7 @@ function WeekPage() {
                 date = new Date(date.setDate(date.getDate() + 1));
             }
             return contains;
-        })));
-        return appointmentList;
+        });
     };
 
     let appointments;
