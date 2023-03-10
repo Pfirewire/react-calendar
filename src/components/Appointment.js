@@ -4,13 +4,16 @@ import EditAppointmentModal from "./modals/EditAppointmentModal";
 
 function Appointment({ appointment }) {
     const [showModal, setShowModal] = useState(false);
+    console.log("Show modal is " + showModal);
 
     const handleOpenModal = () => {
         setShowModal(true);
     };
 
     const handleCloseModal = () => {
+        console.log("Close Modal");
         setShowModal(false);
+        console.log(showModal);
     };
 
     return(
