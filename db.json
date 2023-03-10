@@ -1,13 +1,6 @@
 {
   "appointments": [
     {
-      "title": "test",
-      "date": "2023-03-01",
-      "duration": 0,
-      "notes": "",
-      "id": 11
-    },
-    {
       "title": "Form test",
       "date": "2023-03-10",
       "duration": 0,
@@ -61,6 +54,22 @@
       "duration": 0,
       "notes": "Yup",
       "id": 18
+    },
+    {
+      "title": "Testttt",
+      "date": "2023-03-01",
+      "start": "00:00",
+      "duration": 0,
+      "notes": "t",
+      "id": 19
+    },
+    {
+      "title": "Uh oh",
+      "date": "2023-03-01",
+      "start": "00:00",
+      "duration": 0,
+      "notes": "test",
+      "id": 20
     }
   ]
 }

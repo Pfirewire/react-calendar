@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {useEditAppointmentMutation} from "../../store";
+import {useDeleteAppointmentMutation, useEditAppointmentMutation} from "../../store";
 import Button from "../Button";
 import Modal from "../Modal";
 import AppointmentForm from "../AppointmentForm";
@@ -15,7 +15,8 @@ function EditAppointmentModal({ appointment, handleClose }) {
         notes: appointment.notes,
     });
 
-    const [editAppointment, results] = useEditAppointmentMutation();
+    const [editAppointment, editResults] = useEditAppointmentMutation();
+    const [deleteAppointment, deleteResults] = useDeleteAppointmentMutation();
 
     const handleEditAppointment = (e) => {
         e.preventDefault();
@@ -23,9 +24,16 @@ function EditAppointmentModal({ appointment, handleClose }) {
         handleClose();
     };
 
+    const handleDeleteAppointment = (e) => {
+        e.preventDefault();
+        deleteAppointment(form);
+        handleClose();
+    }
+
     const actionBar = (
-        <div className='flex justify-center items-center py-2'>
-            <Button onClick={handleEditAppointment} primary>Edit Appointment</Button>
+        <div className='flex justify-between items-center py-2'>
+            <Button onClick={handleEditAppointment} primary>Edit</Button>
+            <Button onClick={handleDeleteAppointment} danger>Delete</Button>
         </div>
     );
 
