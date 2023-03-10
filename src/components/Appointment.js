@@ -3,29 +3,32 @@ import EditAppointmentModal from "./modals/EditAppointmentModal";
 
 
 function Appointment({ appointment }) {
-    const [showModal, setShowModal] = useState(false);
-    console.log("Show modal is " + showModal);
+    const [showEditModal, setShowEditModal] = useState(false);
+    console.log("Show modal is " + showEditModal);
 
     const handleOpenModal = () => {
-        setShowModal(true);
+        setShowEditModal(true);
     };
 
-    const handleCloseModal = () => {
+    const handleCloseModal = async () => {
         console.log("Close Modal");
-        setShowModal(false);
-        console.log(showModal);
+        await setShowEditModal(false);
+        console.log(showEditModal);
     };
 
     return(
-        <div className='flex justify-between w-full bg-green-300 rounded my-1 h-6 cursor-pointer' onClick={handleOpenModal}>
-            <div className='ml-1 overflow-hidden text-ellipsis'>
-                {appointment.title}
+        <div>
+            <div className='flex justify-between w-full bg-green-300 rounded my-1 h-6 cursor-pointer' onClick={handleOpenModal}>
+                <div className='ml-1 overflow-hidden text-ellipsis'>
+                    {appointment.title}
+                </div>
+                <div className='mr-1'>
+                    {appointment.start}
+                </div>
             </div>
-            <div className='mr-1'>
-                {appointment.start}
-            </div>
-            {showModal && <EditAppointmentModal appointment={appointment} handleClose={handleCloseModal} />}
+            {showEditModal && <EditAppointmentModal appointment={appointment} handleClose={handleCloseModal} />}
         </div>
+
     );
 }
 
