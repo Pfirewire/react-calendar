@@ -4,16 +4,13 @@ import AppointmentModal from "./AppointmentModal";
 
 function Appointment({ appointment }) {
     const [showEditModal, setShowEditModal] = useState(false);
-    console.log("Show modal is " + showEditModal);
 
     const handleOpenModal = () => {
         setShowEditModal(true);
     };
 
     const handleCloseModal = async () => {
-        console.log("Close Modal");
         await setShowEditModal(false);
-        console.log(showEditModal);
     };
 
     return(

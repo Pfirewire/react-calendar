@@ -7,7 +7,6 @@ import AppointmentModal from "./appointments/AppointmentModal";
 function Header({ handlePrev, handleNext }) {
     const dateAndTime = useSelector(state => state.selectedDateAndTime.dateAndTime);
     const [showModal, setShowModal] = useState(false);
-    console.log("Show modal is " + showModal);
 
     const handleOpenModal = () => {
         setShowModal(true);

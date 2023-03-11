@@ -16,7 +16,6 @@ function Month({ appointments }) {
             appointmentDate.setMinutes(0);
             return appointmentDate >= startDate && appointmentDate <= endDate;
         });
-        console.log(trimmedAppointments);
         return trimmedAppointments;
     };
 
