@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { incrementDay, decrementDay } from "../../store";
 import Header from "../Header";
-import Day from '../Day';
+import Day from '../time-periods/Day';
 
 function DayPage() {
     const dispatch = useDispatch();

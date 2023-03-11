@@ -2,7 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import { incrementMonth, decrementMonth } from "../../store";
 import { useFetchAppointmentsQuery } from "../../store";
 import Header from "../Header";
-import Month from "../Month";
+import Month from "../time-periods/Month";
 
 function MonthPage() {
     const dispatch = useDispatch();

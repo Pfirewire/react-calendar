@@ -1,5 +1,5 @@
 import {useState} from "react";
-import AppointmentModal from "./modals/AppointmentModal";
+import AppointmentModal from "./AppointmentModal";
 
 
 function Appointment({ appointment }) {

@@ -1,8 +1,8 @@
-import { convertDateAndTime } from "../dateConversions";
+import { convertDateAndTime } from "../../dateConversions";
 import { useSelector } from "react-redux";
 import className from 'classnames';
-import Appointment from "./Appointment";
-import AppointmentMini from "./AppointmentMini";
+import Appointment from "../appointments/Appointment";
+import AppointmentMini from "../appointments/AppointmentMini";
 
 // Day Component to show single Day in all pages of calendar
 // Receives props:

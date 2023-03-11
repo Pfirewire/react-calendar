@@ -1,5 +1,5 @@
 import Day from "./Day";
-import app from "../App";
+import app from "../../App";
 
 function Week({ monthWeek, startDate, appointments }) {
 

@@ -2,7 +2,7 @@ import Button from "./Button";
 import {GoArrowLeft, GoArrowRight} from "react-icons/go";
 import {useSelector} from "react-redux";
 import {useState} from "react";
-import AppointmentModal from "./modals/AppointmentModal";
+import AppointmentModal from "./appointments/AppointmentModal";
 
 function Header({ handlePrev, handleNext }) {
     const dateAndTime = useSelector(state => state.selectedDateAndTime.dateAndTime);

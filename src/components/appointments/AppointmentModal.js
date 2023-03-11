@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {useAddAppointmentMutation, useDeleteAppointmentMutation, useEditAppointmentMutation} from "../../store";
 import Button from "../Button";
 import Modal from "../Modal";
-import AppointmentForm from "../AppointmentForm";
+import AppointmentForm from "./AppointmentForm";
 import {useSelector} from "react-redux";
 
 
