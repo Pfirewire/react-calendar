@@ -1,12 +1,12 @@
-import {useState} from "react";
-import {useDeleteAppointmentMutation, useEditAppointmentMutation} from "../../store";
+import {useEffect, useState} from "react";
+import {useAddAppointmentMutation, useDeleteAppointmentMutation, useEditAppointmentMutation} from "../../store";
 import Button from "../Button";
 import Modal from "../Modal";
 import AppointmentForm from "../AppointmentForm";
 import {useSelector} from "react-redux";
 
 
-function AppointmentModal({ appointment }) {
+function AppointmentModal({ appointment, handleClose }) {
     const dateAndTime = useSelector(state => state.selectedDateAndTime.dateAndTime);
     const [form, setForm] = useState({
         title: '',
@@ -15,20 +15,30 @@ function AppointmentModal({ appointment }) {
         duration: 0,
         notes: '',
     });
-    if(appointment) {
-        setForm({
-            id: appointment.id,
-            title: appointment.title,
-            date: appointment.date,
-            start: appointment.start,
-            duration: appointment.duration,
-            notes: appointment.notes,
-        });
-    }
+
+    useEffect(() => {
+        if(appointment) {
+            setForm({
+                id: appointment.id,
+                title: appointment.title,
+                date: appointment.date,
+                start: appointment.start,
+                duration: appointment.duration,
+                notes: appointment.notes,
+            });
+        }
+    }, []);
 
 
     const [editAppointment, editResults] = useEditAppointmentMutation();
+    const [addAppointment, addResults] = useAddAppointmentMutation();
     const [deleteAppointment, deleteResults] = useDeleteAppointmentMutation();
+
+    const handleAddAppointment = (e) => {
+        e.preventDefault();
+        addAppointment(form);
+        handleClose();
+    };
 
     const handleEditAppointment = (e) => {
         e.preventDefault();
@@ -44,14 +54,16 @@ function AppointmentModal({ appointment }) {
 
     const actionBar = (
         <div className='flex justify-between items-center py-2'>
-            <Button onClick={handleEditAppointment} primary>Edit</Button>
-            <Button onClick={handleDeleteAppointment} danger>Delete</Button>
+            {!appointment && <Button onClick={handleAddAppointment} primary>Create Appointment</Button>}
+            {appointment && <Button onClick={handleEditAppointment} primary>Edit</Button>}
+            {appointment && <Button onClick={handleDeleteAppointment} danger>Delete</Button>}
         </div>
     );
 
     const modal = (
         <Modal onClose={handleClose} actionBar={actionBar}>
-            <AppointmentForm form={form} setForm={setForm} handleSubmit={handleEditAppointment} />
+            {!appointment && <AppointmentForm form={form} setForm={setForm} handleSubmit={handleAddAppointment} />}
+            {appointment && <AppointmentForm form={form} setForm={setForm} handleSubmit={handleEditAppointment} />}
         </Modal>
     );
 

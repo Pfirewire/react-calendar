@@ -1,5 +1,5 @@
 import {useState} from "react";
-import EditAppointmentModal from "./modals/EditAppointmentModal";
+import AppointmentModal from "./modals/AppointmentModal";
 
 
 function AppointmentMini({ appointment }) {
@@ -23,7 +23,7 @@ function AppointmentMini({ appointment }) {
                     {appointment.start}
                 </div>
             </div>
-            {showModal && <EditAppointmentModal appointment={appointment} handleClose={handleCloseModal} />}
+            {showModal && <AppointmentModal appointment={appointment} handleClose={handleCloseModal} />}
         </div>
     );
 }

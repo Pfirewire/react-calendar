@@ -2,7 +2,7 @@ import Button from "./Button";
 import {GoArrowLeft, GoArrowRight} from "react-icons/go";
 import {useSelector} from "react-redux";
 import {useState} from "react";
-import AddAppointmentModal from "./modals/AddAppointmentModal";
+import AppointmentModal from "./modals/AppointmentModal";
 
 function Header({ handlePrev, handleNext }) {
     const dateAndTime = useSelector(state => state.selectedDateAndTime.dateAndTime);
@@ -39,7 +39,7 @@ function Header({ handlePrev, handleNext }) {
             <Button primary className='text-black rounded m-1' onClick={handleOpenModal}>
                 + Add Appointment
             </Button>
-            {showModal && <AddAppointmentModal handleClose={handleCloseModal} />}
+            {showModal && <AppointmentModal handleClose={handleCloseModal} />}
         </div>
     );
 
