@@ -18,7 +18,7 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date, appointments, ...rest
         rest.className,
         'border-2 border-slate-400',
         {
-            'bg-gray-200': prettyDate.month !== month,
+            'bg-gray-700': prettyDate.month !== month,
             'w-48': !isSingleDay,
             'w-full': isSingleDay,
             'h-32': !isSingleWeek || !isSingleDay,
