@@ -12,7 +12,7 @@ function AppointmentForm({ form, setForm, handleSubmit }) {
     return(
         <div className='flex flex-col justify-center items-center w-96'>
             <h2 className='text-2xl mb-6 w-full text-center'>Appointment</h2>
-            <form className='w-full' onSubmit={handleSubmit}>
+            <form className='w-full text-black' onSubmit={handleSubmit}>
                 <div className='flex justify-center py-2'>
                     <input
                         id='date'
