@@ -15,7 +15,7 @@ function Appointment({ appointment }) {
 
     return(
         <div>
-            <div className='flex justify-between w-full bg-green-300 rounded my-1 h-6 cursor-pointer' onClick={handleOpenModal}>
+            <div className='flex justify-between w-full bg-green-300 rounded my-1 h-6 cursor-pointer text-black' onClick={handleOpenModal}>
                 <div className='ml-1 overflow-hidden text-ellipsis'>
                     {appointment.title}
                 </div>
