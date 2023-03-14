@@ -3,7 +3,6 @@ import {useSelector} from "react-redux";
 
 function AppointmentFormTime({ form, handleChange }) {
     const { minute, hour } = useSelector(state => state.currentDateAndTime.dateAndTime);
-    console.log(`${hour}:${minute}`);
 
     const createStartTimes = () => {
         let startHour = hour;
