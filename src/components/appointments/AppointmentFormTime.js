@@ -2,10 +2,7 @@ import {useSelector} from "react-redux";
 
 
 function AppointmentFormTime({ form, handleChange }) {
-    const { minute, hour } = useSelector(state => state.currentDateAndTime.dateAndTime);
-
     const createStartTimes = () => {
-        console.log(form);
         let startHour = 0;
         let startMinute = 0;
         let startTimes = [];
@@ -24,9 +21,10 @@ function AppointmentFormTime({ form, handleChange }) {
     };
 
     const renderedStartTimes = createStartTimes().map((startTime, index) => {
+        const startTimeString = `${startTime.hour.toString().padStart(2, '0')}${startTime.minute.toString().padStart(2, '0')}`;
         return <option
             key={index}
-            value={`${startTime.hour.toString().padStart(2, '0')}${startTime.minute.toString().padStart(2, '0')}`}
+            value={startTimeString}
         >
             {startTime.hour > 12
                 ? `${startTime.hour - 12}:${startTime.minute.toString().padStart(2, '0')} pm`
@@ -36,8 +34,8 @@ function AppointmentFormTime({ form, handleChange }) {
 
     return(
         <div>
-            <label className="text-white" htmlFor="startTimeSelect">Start Time: </label>
-            <select name="startTimeSelect" id="startTimeSelect">
+            <label className="text-white" htmlFor="start">Start Time: </label>
+            <select name="start" id="start" value={form.start} onChange={handleChange}>
                 {renderedStartTimes}
             </select>
         </div>

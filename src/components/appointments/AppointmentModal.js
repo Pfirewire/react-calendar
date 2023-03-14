@@ -11,7 +11,7 @@ function AppointmentModal({ appointment, handleClose }) {
     const [form, setForm] = useState({
         title: '',
         date: `${dateAndTime.year}-${dateAndTime.prettyMonth}-${dateAndTime.prettyDay}`,
-        start: '00:00',
+        start: '0000',
         duration: 0,
         notes: '',
     });
