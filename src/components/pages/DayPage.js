@@ -9,7 +9,6 @@ function DayPage() {
     const { data, error, isFetching } = useFetchAppointmentsQuery();
     const selectedDate = new Date(dateAndTime.year, dateAndTime.month, dateAndTime.day);
     const dispatch = useDispatch();
-    console.log(selectedDate);
 
     const handlePrevDay = () => {
         dispatch(decrementDay());
@@ -45,7 +44,7 @@ function DayPage() {
         <div className='flex flex-col flex-grow m-6'>
             <Header handlePrev={handlePrevDay} handleNext={handleNextDay} />
             <div className='flex justify-center items-center'>
-                <Day isSingleDay appointments={appointments} />
+                <Day isSingleDay date={selectedDate} appointments={appointments} />
             </div>
         </div>
     );

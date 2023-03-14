@@ -47,7 +47,7 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date, appointments, ...rest
             {firstWeek && <div className='flex justify-center text-lg'>{prettyDate.dayString}</div>}
             <div className={classes}>
                 <div className='flex justify-center'>
-                    {showMonth && prettyDate.monthString} {date && prettyDate.day}
+                    {isSingleDay && prettyDate.dayString} {showMonth && !isSingleDay && prettyDate.monthString} {date && prettyDate.day}
                     {!date && day}
                 </div>
                 {renderedAppointmentMinis}
