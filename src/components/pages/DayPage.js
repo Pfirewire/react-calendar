@@ -22,9 +22,6 @@ function DayPage() {
         return data.filter(appointment => {
             const appointmentDate = new Date(appointment.date);
             appointmentDate.setDate(appointmentDate.getDate() + 1);
-            console.log(appointment);
-            console.log(`Appointment Year: ${appointmentDate.getFullYear()}, Month: ${appointmentDate.getMonth()}, Day: ${appointmentDate.getDate()}`);
-            console.log(`Selected Year: ${selectedDate.getFullYear()}, Month: ${selectedDate.getMonth()}, Day: ${selectedDate.getDate()}`);
             return selectedDate.getFullYear() === appointmentDate.getFullYear() &&
             selectedDate.getMonth() === appointmentDate.getMonth() &&
             selectedDate.getDate() === appointmentDate.getDate()
