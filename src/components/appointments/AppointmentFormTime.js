@@ -8,25 +8,32 @@ function AppointmentFormTime({ form, handleChange }) {
     const createStartTimes = () => {
         let startHour = hour;
         let startMinute = (15 - (minute % 15)) + minute;
+        if(startMinute === 60) {
+            startHour = startHour + 1;
+            startMinute = 0;
+        }
         let startTimes = [];
         do {
+            startTimes.push(`${startHour}:${startMinute}`);
+            startMinute = startMinute + 15;
             if(startMinute === 60) {
                 startHour = startHour + 1;
                 startMinute = 0;
-            } else {
-                startMinute = startMinute + 15;
             }
-            startTimes.push(`${startHour}:${startMinute}`);
         } while(startHour < 24)
-        startTimes.pop();
-        console.log(startTimes);
+        return startTimes;
     };
 
-    createStartTimes();
+    const renderedStartTimes = createStartTimes().map((startTime, index) => {
+        return <option key={index} value={startTime}>{startTime}</option>
+    });
 
     return(
         <div>
-            start times here
+            <label className="text-white" htmlFor="startTimeSelect">Start Time: </label>
+            <select name="startTimeSelect" id="startTimeSelect">
+                {renderedStartTimes}
+            </select>
         </div>
     );
 }
