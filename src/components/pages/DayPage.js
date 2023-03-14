@@ -9,6 +9,7 @@ function DayPage() {
     const { data, error, isFetching } = useFetchAppointmentsQuery();
     const selectedDate = new Date(dateAndTime.year, dateAndTime.month, dateAndTime.day);
     const dispatch = useDispatch();
+    console.log(selectedDate);
 
     const handlePrevDay = () => {
         dispatch(decrementDay());
@@ -21,6 +22,10 @@ function DayPage() {
     const renderAppointments = () => {
         return data.filter(appointment => {
             const appointmentDate = new Date(appointment.date);
+            appointmentDate.setDate(appointmentDate.getDate() + 1);
+            console.log(appointment);
+            console.log(`Appointment Year: ${appointmentDate.getFullYear()}, Month: ${appointmentDate.getMonth()}, Day: ${appointmentDate.getDate()}`);
+            console.log(`Selected Year: ${selectedDate.getFullYear()}, Month: ${selectedDate.getMonth()}, Day: ${selectedDate.getDate()}`);
             return selectedDate.getFullYear() === appointmentDate.getFullYear() &&
             selectedDate.getMonth() === appointmentDate.getMonth() &&
             selectedDate.getDate() === appointmentDate.getDate()
