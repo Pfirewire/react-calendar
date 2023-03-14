@@ -5,15 +5,15 @@ function AppointmentFormTime({ form, handleChange }) {
     const { minute, hour } = useSelector(state => state.currentDateAndTime.dateAndTime);
 
     const createStartTimes = () => {
-        let startHour = hour;
-        let startMinute = (15 - (minute % 15)) + minute;
-        if(startMinute === 60) {
-            startHour = startHour + 1;
-            startMinute = 0;
-        }
+        console.log(form);
+        let startHour = 0;
+        let startMinute = 0;
         let startTimes = [];
         do {
-            startTimes.push(`${startHour}:${startMinute}`);
+            startTimes.push({
+                hour: startHour,
+                minute: startMinute
+            });
             startMinute = startMinute + 15;
             if(startMinute === 60) {
                 startHour = startHour + 1;
@@ -24,7 +24,14 @@ function AppointmentFormTime({ form, handleChange }) {
     };
 
     const renderedStartTimes = createStartTimes().map((startTime, index) => {
-        return <option key={index} value={startTime}>{startTime}</option>
+        return <option
+            key={index}
+            value={`${startTime.hour.toString().padStart(2, '0')}${startTime.minute.toString().padStart(2, '0')}`}
+        >
+            {startTime.hour > 12
+                ? `${startTime.hour - 12}:${startTime.minute.toString().padStart(2, '0')} pm`
+                : `${startTime.hour === 0 ? 12 : startTime.hour}:${startTime.minute.toString().padStart(2, '0')} am`}
+        </option>
     });
 
     return(
