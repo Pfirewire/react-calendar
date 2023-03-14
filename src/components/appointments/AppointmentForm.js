@@ -1,3 +1,4 @@
+import AppointmentFormTime from "./AppointmentFormTime";
 
 
 function AppointmentForm({ form, setForm, handleSubmit }) {
@@ -21,6 +22,7 @@ function AppointmentForm({ form, setForm, handleSubmit }) {
                         onChange={handleChange}
                     />
                 </div>
+                <AppointmentFormTime form={form} handleChange={handleChange} />
                 <div className='py-2'>
                     <input className='border-2 w-full'
                         id='title'
