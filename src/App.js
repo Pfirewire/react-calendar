@@ -12,10 +12,8 @@ function App() {
 
     return(
         <div>
-
-            <CurrentDateAndTime />
             <div className='flex flex-row'>
-                <Sidebar className='w-40 mt-24' />
+                <Sidebar className='w-20 mt-24' />
 
                 {/*Month, Week, and Page view routes*/}
                 <div className='grow flex justify-center'>

@@ -8,6 +8,7 @@ import {
     decrementWeek,
     incrementDay,
     decrementDay,
+    setDay,
     changeTime
 } from "./slices/selectedDateAndTimeSlice";
 import { appointmentsApi } from "./apis/appointmentsApi";
@@ -37,6 +38,7 @@ export {
     decrementWeek,
     incrementDay,
     decrementDay,
+    setDay,
     changeTime
 };
 export {

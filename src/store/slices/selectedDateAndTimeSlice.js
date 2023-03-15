@@ -54,6 +54,11 @@ const selectedDateAndTimeSlice = createSlice({
             date.setDate(date.getDate() - 1);
             state.dateAndTime = convertDateAndTime(date);
         },
+        setDay(state, action) {
+            let date = getDateObject(state.dateAndTime);
+            date.setDate(action.payload);
+            state.dateAndTime = convertDateAndTime(date);
+        },
         changeTime(state, action) {
 
         }
@@ -67,6 +72,7 @@ export const {
     decrementWeek,
     incrementDay,
     decrementDay,
+    setDay,
     changeTime,
 } = selectedDateAndTimeSlice.actions;
 export const selectedDateAndTimeReducer = selectedDateAndTimeSlice.reducer;

@@ -3,11 +3,12 @@ import { incrementMonth, decrementMonth } from "../../store";
 import { useFetchAppointmentsQuery } from "../../store";
 import Header from "../Header";
 import Month from "../time-periods/Month";
+import {useEffect} from "react";
 
 function MonthPage() {
     const dispatch = useDispatch();
     const { data, error, isFetching } = useFetchAppointmentsQuery();
-    const { year, prettyMonth } = useSelector(state => state.selectedDateAndTime.dateAndTime)
+    const { year, prettyMonth } = useSelector(state => state.selectedDateAndTime.dateAndTime);
     const handlePrevMonth = () => {
         dispatch(decrementMonth());
     };

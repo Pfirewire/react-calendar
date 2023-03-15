@@ -1,9 +1,16 @@
 import Week from "./Week";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+import {setDay} from "../../store";
 
 
 function Month({ appointments }) {
+    const dispatch = useDispatch();
     const dateAndTime = useSelector(state => state.selectedDateAndTime.dateAndTime);
+
+    useEffect(() => {
+        dispatch(setDay(1));
+    }, []);
 
     const weekContainsAppointment = date => {
         const startDate = new Date(date);
