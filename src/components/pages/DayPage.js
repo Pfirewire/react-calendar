@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from "react-redux";
 import {incrementDay, decrementDay, useFetchAppointmentsQuery} from "../../store";
 import Header from "../Header";
 import Day from '../time-periods/Day';
-import app from "../../App";
 import {filterAppointmentsToDay} from "../../methods/appointmentMethods";
 
 function DayPage() {
@@ -18,16 +17,6 @@ function DayPage() {
     const handleNextDay = () => {
         dispatch(incrementDay());
     };
-
-    // const renderAppointments = () => {
-    //     return data.filter(appointment => {
-    //         const appointmentDate = new Date(appointment.date);
-    //         appointmentDate.setDate(appointmentDate.getDate() + 1);
-    //         return selectedDate.getFullYear() === appointmentDate.getFullYear() &&
-    //         selectedDate.getMonth() === appointmentDate.getMonth() &&
-    //         selectedDate.getDate() === appointmentDate.getDate()
-    //     });
-    // };
 
     let appointments;
     if(isFetching) {
