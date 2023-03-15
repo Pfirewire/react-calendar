@@ -4,11 +4,13 @@ import { useFetchAppointmentsQuery } from "../../store";
 import Header from "../Header";
 import Month from "../time-periods/Month";
 import {useEffect} from "react";
+import {filterAppointmentsToMonth} from "../../methods/appointmentMethods";
 
 function MonthPage() {
     const dispatch = useDispatch();
     const { data, error, isFetching } = useFetchAppointmentsQuery();
-    const { year, prettyMonth } = useSelector(state => state.selectedDateAndTime.dateAndTime);
+    const dateAndTime = useSelector(state => state.selectedDateAndTime.dateAndTime);
+    const selectedDate = new Date(dateAndTime.year, dateAndTime.month, dateAndTime.day);
     const handlePrevMonth = () => {
         dispatch(decrementMonth());
     };
@@ -23,9 +25,7 @@ function MonthPage() {
     } else if(error) {
         appointments = [];
     } else {
-        appointments = data.filter(appointment => {
-            return appointment.date.includes(`${year}-${prettyMonth}`);
-        });
+        appointments = filterAppointmentsToMonth(data, selectedDate);
     }
     return(
         <div className='flex flex-col'>

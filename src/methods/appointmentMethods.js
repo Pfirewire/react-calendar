@@ -23,6 +23,12 @@ function filterAppointmentsToWeek(data, selectedDate) {
     }));
 }
 
+function filterAppointmentsToMonth(data, selectedDate) {
+    return sortAppointments(data.filter(appointment => {
+        return appointment.date.includes(`${selectedDate.getFullYear()}-${(selectedDate.getMonth() + 1).toString().padStart(2, '0')}`);
+    }));
+}
+
 function sortAppointments(appointments) {
     return appointments.sort((a, b) => {
         return parseFloat(a.start) - parseFloat(b.start);
@@ -37,4 +43,4 @@ function dateMatches(dateOne, dateTwo) {
     );
 }
 
-export { filterAppointmentsToDay, filterAppointmentsToWeek };
+export { filterAppointmentsToDay, filterAppointmentsToWeek, filterAppointmentsToMonth };
