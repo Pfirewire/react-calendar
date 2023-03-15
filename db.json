@@ -87,6 +87,14 @@
       "duration": 0,
       "notes": "This is just a teeest",
       "id": 23
+    },
+    {
+      "title": "EOM",
+      "date": "2023-03-31",
+      "start": "0900",
+      "duration": 0,
+      "notes": "End of Month test",
+      "id": 24
     }
   ]
 }

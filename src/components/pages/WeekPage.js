@@ -31,7 +31,7 @@ function WeekPage() {
         <div className='flex flex-col'>
             <Header handlePrev={handlePrevWeek} handleNext={handleNextWeek} />
             <div>
-                <Week appointments={appointments} startDate={selectedDate.setDate(selectedDate.getDate() - selectedDate.getDay())} />
+                <Week appointments={appointments} startDate={selectedDate.setDate(selectedDate.getDate() - selectedDate.getDay() - 1)} />
             </div>
         </div>
     );

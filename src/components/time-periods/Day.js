@@ -26,6 +26,14 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date, appointments, ...rest
         }
     );
 
+    const singleDayClasses = className(
+        rest.className,
+        'mx-auto h-screen',
+        {
+            'flex-grow': isSingleDay
+        }
+    );
+
     const renderedAppointmentMinis = appointments.map((appointment, index) => {
         if(isSingleDay || isSingleWeek) {
             return <Appointment key={index} appointment={appointment} />;
@@ -33,14 +41,6 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date, appointments, ...rest
             return <AppointmentMini key={index} appointment={appointment} />;
         }
     });
-
-    const singleDayClasses = className(
-        rest.className,
-        'mx-auto h-screen',
-        {
-            'flex-grow': isSingleDay
-        }
-    )
 
     return(
         <div className={(isSingleDay || isSingleWeek) ? singleDayClasses : undefined }>
