@@ -1,16 +1,9 @@
 {
   "appointments": [
     {
-      "title": "Form test",
-      "date": "2023-03-10",
-      "duration": 0,
-      "notes": "This is a test",
-      "id": 12
-    },
-    {
       "title": "Another Test",
       "date": "2024-03-20",
-      "start": "00:00",
+      "start": "0000",
       "duration": 0,
       "notes": "Another test with correct start time this time hopefully!",
       "id": 13
@@ -18,7 +11,7 @@
     {
       "title": "Today's Title",
       "date": "2023-03-07",
-      "start": "00:00",
+      "start": "0000",
       "duration": 0,
       "notes": "Hello",
       "id": 14
@@ -26,7 +19,7 @@
     {
       "title": "Another",
       "date": "2023-04-12",
-      "start": "00:00",
+      "start": "0000",
       "duration": 0,
       "notes": "Test",
       "id": 15
@@ -34,7 +27,7 @@
     {
       "title": "Tester",
       "date": "2023-03-02",
-      "start": "00:00",
+      "start": "0000",
       "duration": 0,
       "notes": "Test Notes",
       "id": 16
@@ -42,7 +35,7 @@
     {
       "title": "Another first",
       "date": "2023-03-01",
-      "start": "00:00",
+      "start": "0000",
       "duration": 0,
       "notes": "Hello",
       "id": 17
@@ -50,7 +43,7 @@
     {
       "title": "Testing long title here we goooooo",
       "date": "2023-03-29",
-      "start": "00:00",
+      "start": "0000",
       "duration": 0,
       "notes": "Yup",
       "id": 18
@@ -58,7 +51,7 @@
     {
       "title": "Testttt",
       "date": "2023-03-01",
-      "start": "00:00",
+      "start": "0130",
       "duration": 0,
       "notes": "t",
       "id": 19
@@ -66,7 +59,7 @@
     {
       "title": "Saturday Test",
       "date": "2023-03-04",
-      "start": "00:00",
+      "start": "0000",
       "duration": 0,
       "notes": "fdjksl",
       "id": 20
@@ -74,7 +67,7 @@
     {
       "title": "tesssssst",
       "date": "2023-03-01",
-      "start": "00:00",
+      "start": "0000",
       "duration": 0,
       "notes": "t",
       "id": 21

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {convertDateAndTime} from "../../dateConversions";
+import {convertDateAndTime} from "../../methods/conversionMethods";
 
 const currentDateAndTimeSlice = createSlice({
     name: 'current',
