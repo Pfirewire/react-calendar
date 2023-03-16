@@ -1,5 +1,3 @@
-
-
 function filterAppointmentsToDay(appointments, selectedDate) {
     return sortAppointments(appointments.filter(appointment => {
         const appointmentDate = new Date(appointment.date);
@@ -48,17 +46,11 @@ function updateDuration(start, end) {
     const startMinute = parseInt(start.substring(2, 4));
     const endHour = parseInt(end.substring(0, 2));
     const endMinute = parseInt(end.substring(2, 4));
-    console.log(startHour);
-    console.log(startMinute);
-    console.log(endHour);
-    console.log(endMinute);
     if(start === end) {
         return 0;
     } else if (start < end) {
         return ((endHour - startHour) * 60) + ((60 - startMinute) - (60 - endMinute));
     } else {
-        console.log((((24 - startHour) * 60) - startMinute));
-        console.log(((endHour * 60) + endMinute));
         return (((24 - startHour) * 60) - startMinute) + ((endHour * 60) + endMinute);
     }
 }

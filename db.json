@@ -4,8 +4,8 @@
       "title": "Second duration test",
       "date": "2023-03-01",
       "start": "0000",
-      "end": "0100",
-      "duration": 90,
+      "end": "0800",
+      "duration": 480,
       "notes": "test",
       "id": 1
     },
@@ -13,8 +13,8 @@
       "title": "Remnant with Lily",
       "date": "2023-03-16",
       "start": "1800",
-      "end": "1900",
-      "duration": 60,
+      "end": "1915",
+      "duration": 75,
       "notes": "Fun times? x2",
       "id": 2
     },
