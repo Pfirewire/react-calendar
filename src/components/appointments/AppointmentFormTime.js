@@ -14,7 +14,7 @@ function AppointmentFormTime({ form, handleChange }) {
             });
             startMinute = startMinute + 15;
             if(startMinute === 60) {
-                startHour = startHour + 1;
+                startHour += 1;
                 startMinute = 0;
             }
         } while(startHour < 24)
@@ -43,7 +43,6 @@ function AppointmentFormTime({ form, handleChange }) {
                 minute: endMinute
             });
         }
-        console.log(endTimes);
         return endTimes;
     };
 
@@ -52,15 +51,15 @@ function AppointmentFormTime({ form, handleChange }) {
     });
 
     return(
-        <div>
+        <div className='flex justify-between'>
             <div>
-                <label className="text-white" htmlFor="start">Start Time: </label>
+                <label className="text-white" htmlFor="start">Start: </label>
                 <select name="start" id="start" value={form.start} onChange={handleChange}>
                     {renderedStartTimes}
                 </select>
             </div>
             <div>
-                <label className="text-white" htmlFor="end">End Time: </label>
+                <label className="text-white" htmlFor="end">End: </label>
                 <select name="end" id="end" value={form.end} onChange={handleChange}>
                     {renderedEndTimes}
                 </select>
