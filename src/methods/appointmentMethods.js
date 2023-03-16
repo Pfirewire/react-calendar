@@ -43,4 +43,16 @@ function dateMatches(dateOne, dateTwo) {
     );
 }
 
-export { filterAppointmentsToDay, filterAppointmentsToWeek, filterAppointmentsToMonth };
+function updateDuration(start, end) {
+    const startHour = start.substring(0, 2);
+    const startMinute = start.substring(2, 4);
+    const endHour = end.substring(0, 2);
+    const endMinute = end.substring(2, 4);
+    if(start === end) {
+        return 0;
+    } else {
+        return ((endHour - startHour) * 60) + ((60 - startMinute) - (60 - endMinute));
+    }
+}
+
+export { filterAppointmentsToDay, filterAppointmentsToWeek, filterAppointmentsToMonth, updateDuration };

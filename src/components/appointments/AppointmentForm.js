@@ -1,4 +1,5 @@
 import AppointmentFormTime from "./AppointmentFormTime";
+import {updateDuration} from "../../methods/appointmentMethods";
 
 
 function AppointmentForm({ form, setForm, handleSubmit }) {
@@ -7,6 +8,7 @@ function AppointmentForm({ form, setForm, handleSubmit }) {
         setForm({
             ...form,
             [e.target.id]: e.target.value,
+            duration: updateDuration(form.start, form.end)
         });
     }
 

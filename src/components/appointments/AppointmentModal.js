@@ -12,6 +12,7 @@ function AppointmentModal({ appointment, handleClose }) {
         title: '',
         date: `${dateAndTime.year}-${dateAndTime.prettyMonth}-${dateAndTime.prettyDay}`,
         start: '0000',
+        end: '0000',
         duration: 0,
         notes: '',
     });
@@ -23,6 +24,7 @@ function AppointmentModal({ appointment, handleClose }) {
                 title: appointment.title,
                 date: appointment.date,
                 start: appointment.start,
+                end: appointment.end,
                 duration: appointment.duration,
                 notes: appointment.notes,
             });
