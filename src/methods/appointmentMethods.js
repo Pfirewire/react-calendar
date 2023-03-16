@@ -44,14 +44,22 @@ function dateMatches(dateOne, dateTwo) {
 }
 
 function updateDuration(start, end) {
-    const startHour = start.substring(0, 2);
-    const startMinute = start.substring(2, 4);
-    const endHour = end.substring(0, 2);
-    const endMinute = end.substring(2, 4);
+    const startHour = parseInt(start.substring(0, 2));
+    const startMinute = parseInt(start.substring(2, 4));
+    const endHour = parseInt(end.substring(0, 2));
+    const endMinute = parseInt(end.substring(2, 4));
+    console.log(startHour);
+    console.log(startMinute);
+    console.log(endHour);
+    console.log(endMinute);
     if(start === end) {
         return 0;
-    } else {
+    } else if (start < end) {
         return ((endHour - startHour) * 60) + ((60 - startMinute) - (60 - endMinute));
+    } else {
+        console.log((((24 - startHour) * 60) - startMinute));
+        console.log(((endHour * 60) + endMinute));
+        return (((24 - startHour) * 60) - startMinute) + ((endHour * 60) + endMinute);
     }
 }
 

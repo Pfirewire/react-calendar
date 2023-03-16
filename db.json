@@ -8,6 +8,24 @@
       "duration": 90,
       "notes": "test",
       "id": 1
+    },
+    {
+      "title": "Remnant with Lily",
+      "date": "2023-03-16",
+      "start": "1800",
+      "end": "1900",
+      "duration": 60,
+      "notes": "Fun times? x2",
+      "id": 2
+    },
+    {
+      "title": "Crit Role",
+      "date": "2023-03-08",
+      "start": "2330",
+      "end": "0215",
+      "duration": 165,
+      "notes": "test",
+      "id": 3
     }
   ]
 }

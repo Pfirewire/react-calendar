@@ -1,14 +1,21 @@
 import AppointmentFormTime from "./AppointmentFormTime";
 import {updateDuration} from "../../methods/appointmentMethods";
+import {useEffect} from "react";
 
 
 function AppointmentForm({ form, setForm, handleSubmit }) {
 
+    useEffect(() => {
+        setForm({
+            ...form,
+            duration: updateDuration(form.start, form.end)
+        });
+    }, [form.start, form.end]);
+
     const handleChange = e => {
         setForm({
             ...form,
-            [e.target.id]: e.target.value,
-            duration: updateDuration(form.start, form.end)
+            [e.target.id]: e.target.value
         });
     }
 
