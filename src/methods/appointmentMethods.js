@@ -55,4 +55,22 @@ function updateDuration(start, end) {
     }
 }
 
-export { filterAppointmentsToDay, filterAppointmentsToWeek, filterAppointmentsToMonth, updateDuration };
+function mapAppointmentTimes(time, index) {
+    const timeString = `${time.hour.toString().padStart(2, '0')}${time.minute.toString().padStart(2, '0')}`;
+    return <option
+        key={index}
+        value={timeString}
+    >
+        {time.hour > 12
+            ? `${time.hour - 12}:${time.minute.toString().padStart(2, '0')} pm`
+            : `${time.hour === 0 ? 12 : time.hour}:${time.minute.toString().padStart(2, '0')} am`}
+    </option>
+}
+
+export {
+    filterAppointmentsToDay,
+    filterAppointmentsToWeek,
+    filterAppointmentsToMonth,
+    updateDuration,
+    mapAppointmentTimes
+};

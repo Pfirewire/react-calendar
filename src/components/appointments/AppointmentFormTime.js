@@ -1,4 +1,5 @@
 import {useSelector} from "react-redux";
+import {mapAppointmentTimes} from "../../methods/appointmentMethods";
 
 
 function AppointmentFormTime({ form, handleChange }) {
@@ -21,33 +22,33 @@ function AppointmentFormTime({ form, handleChange }) {
     };
 
     const renderedStartTimes = createStartTimes().map((startTime, index) => {
-        const startTimeString = `${startTime.hour.toString().padStart(2, '0')}${startTime.minute.toString().padStart(2, '0')}`;
-        return <option
-            key={index}
-            value={startTimeString}
-        >
-            {startTime.hour > 12
-                ? `${startTime.hour - 12}:${startTime.minute.toString().padStart(2, '0')} pm`
-                : `${startTime.hour === 0 ? 12 : startTime.hour}:${startTime.minute.toString().padStart(2, '0')} am`}
-        </option>
+        return mapAppointmentTimes(startTime, index);
     });
 
     const createEndTimes = () => {
-        let endHour = form.start.substring(0,2);
-        let endMinute = form.start.substring(2,4);
+        let endHour = parseInt(form.start.substring(0,2));
+        let endMinute = parseInt(form.start.substring(2,4));
         let endTimes = [];
-        for(let i = 0; i < 96; i++) {
+        for(let i = 0; i < 95; i++) {
             endMinute += 15;
-            if(endMinute !== 60) {
-
+            if(endMinute === 60) {
+                endMinute = 0;
+                endHour += 1;
+                if(endHour === 24) {
+                    endHour = 0;
+                }
             }
+            endTimes.push({
+                hour: endHour,
+                minute: endMinute
+            });
         }
         console.log(endTimes);
         return endTimes;
     };
 
     const renderedEndTimes = createEndTimes().map((endTime, index) => {
-
+        return mapAppointmentTimes(endTime, index);
     });
 
     return(
