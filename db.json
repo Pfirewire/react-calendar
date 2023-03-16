@@ -95,6 +95,22 @@
       "duration": 0,
       "notes": "End of Month test",
       "id": 24
+    },
+    {
+      "title": "Tati Meeting",
+      "date": "2023-03-15",
+      "start": "1130",
+      "duration": 0,
+      "notes": "At work",
+      "id": 25
+    },
+    {
+      "title": "Poop",
+      "date": "2023-03-15",
+      "start": "1000",
+      "duration": 0,
+      "notes": "er",
+      "id": 26
     }
   ]
 }
