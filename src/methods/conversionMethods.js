@@ -85,4 +85,11 @@ function getDateObject(dateAndTime) {
     );
 }
 
-export { convertDateAndTime, getDateObject };
+function prettyDuration(durationInMinutes) {
+    return {
+        hour: Math.floor(durationInMinutes / 60),
+        minute: durationInMinutes % 60
+    };
+};
+
+export { convertDateAndTime, getDateObject, prettyDuration };
