@@ -3,6 +3,7 @@ import {incrementWeek, decrementWeek, useFetchAppointmentsQuery} from "../../sto
 import Header from "../Header";
 import Week from "../time-periods/Week";
 import {filterAppointmentsToWeek} from "../../methods/appointmentMethods";
+import DaysOfWeekHeader from "../DaysOfWeekHeader";
 
 function WeekPage() {
     const dispatch = useDispatch();
@@ -30,6 +31,7 @@ function WeekPage() {
     return(
         <div className='flex flex-col'>
             <Header handlePrev={handlePrevWeek} handleNext={handleNextWeek} />
+            <DaysOfWeekHeader isSingleDay={false} />
             <div>
                 <Week appointments={appointments} startDate={selectedDate.setDate(selectedDate.getDate() - selectedDate.getDay() - 1)} />
             </div>

@@ -5,6 +5,7 @@ import Header from "../Header";
 import Month from "../time-periods/Month";
 import {useEffect} from "react";
 import {filterAppointmentsToMonth} from "../../methods/appointmentMethods";
+import DaysOfWeekHeader from "../DaysOfWeekHeader";
 
 function MonthPage() {
     const dispatch = useDispatch();
@@ -30,6 +31,7 @@ function MonthPage() {
     return(
         <div className='flex flex-col'>
             <Header handlePrev={handlePrevMonth} handleNext={handleNextMonth} />
+            <DaysOfWeekHeader isSingleDay={false} />
             <Month appointments={appointments} />
         </div>
     );

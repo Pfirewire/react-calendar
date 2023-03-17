@@ -3,6 +3,7 @@ import {incrementDay, decrementDay, useFetchAppointmentsQuery} from "../../store
 import Header from "../Header";
 import Day from '../time-periods/Day';
 import {filterAppointmentsToDay} from "../../methods/appointmentMethods";
+import DaysOfWeekHeader from "../DaysOfWeekHeader";
 
 function DayPage() {
     const dateAndTime = useSelector(state => state.selectedDateAndTime.dateAndTime);
@@ -28,8 +29,9 @@ function DayPage() {
     }
 
     return(
-        <div className='flex flex-col flex-grow m-6'>
+        <div className='flex flex-col'>
             <Header handlePrev={handlePrevDay} handleNext={handleNextDay} />
+            <DaysOfWeekHeader isSingleDay={true} />
             <div className='flex justify-center items-center'>
                 <Day isSingleDay date={selectedDate} appointments={appointments} />
             </div>
