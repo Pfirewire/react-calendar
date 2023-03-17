@@ -64,8 +64,8 @@ function AppointmentModal({ appointment, handleClose }) {
 
     const modal = (
         <Modal onClose={handleClose} actionBar={actionBar}>
-            {!appointment && <AppointmentForm form={form} setForm={setForm} handleSubmit={handleAddAppointment} />}
-            {appointment && <AppointmentForm form={form} setForm={setForm} handleSubmit={handleEditAppointment} />}
+            {!appointment && <AppointmentForm form={form} edit={false} setForm={setForm} handleSubmit={handleAddAppointment} />}
+            {appointment && <AppointmentForm form={form} edit={true} setForm={setForm} handleSubmit={handleEditAppointment} />}
         </Modal>
     );
 
