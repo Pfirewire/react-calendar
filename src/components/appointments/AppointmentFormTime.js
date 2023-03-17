@@ -1,5 +1,6 @@
 import AppointmentFormStartTime from "./AppointmentFormStartTime";
 import AppointmentFormEndTime from "./AppointmentFormEndTime";
+import AppointmentDuration from "./AppointmentDuration";
 
 
 function AppointmentFormTime({ form, handleChange }) {
@@ -10,9 +11,7 @@ function AppointmentFormTime({ form, handleChange }) {
                 <AppointmentFormStartTime form={form} handleChange={handleChange} />
                 <AppointmentFormEndTime form={form} handleChange={handleChange} />
             </div>
-            <div className='w-full flex justify-center text-white'>
-                Duration: {form.duration} minutes
-            </div>
+            <AppointmentDuration form={form} />
         </div>
     );
 }
