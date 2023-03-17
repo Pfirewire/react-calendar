@@ -29,12 +29,10 @@ function WeekPage() {
     }
 
     return(
-        <div className='flex flex-col'>
+        <div className='flex flex-col items-end w-full'>
             <Header handlePrev={handlePrevWeek} handleNext={handleNextWeek} />
             <DaysOfWeekHeader isSingleDay={false} />
-            <div>
-                <Week appointments={appointments} startDate={selectedDate.setDate(selectedDate.getDate() - selectedDate.getDay() - 1)} />
-            </div>
+            <Week appointments={appointments} startDate={selectedDate.setDate(selectedDate.getDate() - selectedDate.getDay() - 1)} />
         </div>
     );
 }

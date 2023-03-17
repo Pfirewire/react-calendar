@@ -29,12 +29,10 @@ function DayPage() {
     }
 
     return(
-        <div className='flex flex-col'>
+        <div className='flex flex-col items-end w-full'>
             <Header handlePrev={handlePrevDay} handleNext={handleNextDay} />
             <DaysOfWeekHeader isSingleDay={true} />
-            <div className='flex justify-center items-center'>
-                <Day isSingleDay date={selectedDate} appointments={appointments} />
-            </div>
+            <Day isSingleDay date={selectedDate} appointments={appointments} />
         </div>
     );
 }

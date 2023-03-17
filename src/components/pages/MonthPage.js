@@ -29,7 +29,7 @@ function MonthPage() {
         appointments = filterAppointmentsToMonth(data, selectedDate);
     }
     return(
-        <div className='flex flex-col'>
+        <div className='flex flex-col w-full items-end'>
             <Header handlePrev={handlePrevMonth} handleNext={handleNextMonth} />
             <DaysOfWeekHeader isSingleDay={false} />
             <Month appointments={appointments} />

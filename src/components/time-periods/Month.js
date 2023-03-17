@@ -31,7 +31,7 @@ function Month({ appointments }) {
     };
 
     return (
-        <div>
+        <div className='w-full'>
             {renderedWeeks()}
         </div>
     );

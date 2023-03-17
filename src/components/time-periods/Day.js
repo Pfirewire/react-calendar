@@ -16,10 +16,10 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date, appointments, ...rest
     const showMonth = prettyDate.day === 1;
     const classes = className(
         rest.className,
-        'border-2 border-slate-400',
+        'border-2 border-slate-400 flex-grow w-full',
         {
             'bg-gray-700': prettyDate.month !== month,
-            'w-56': !isSingleDay,
+            'w-auto': !isSingleDay,
             'w-full': isSingleDay,
             'h-36': !isSingleWeek && !isSingleDay,
             'h-4/5': isSingleWeek || isSingleDay
@@ -28,7 +28,7 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date, appointments, ...rest
 
     const singleDayClasses = className(
         rest.className,
-        'mx-auto h-screen',
+        'mx-auto h-screen w-full',
         {
             'flex-grow': isSingleDay
         }
@@ -43,8 +43,7 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date, appointments, ...rest
     });
 
     return(
-        <div className={(isSingleDay || isSingleWeek) ? singleDayClasses : undefined }>
-            {(firstWeek || isSingleWeek || isSingleDay) && <div className='flex justify-center text-lg'>{prettyDate.dayString}</div>}
+        <div className={(isSingleDay || isSingleWeek) ? singleDayClasses : 'w-full' }>
             <div className={classes}>
                 <div className='flex justify-center'>
                     {showMonth && !isSingleDay && prettyDate.monthString} {date && prettyDate.day}

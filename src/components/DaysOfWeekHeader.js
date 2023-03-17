@@ -8,18 +8,18 @@ function DaysOfWeekHeader({ isSingleDay }) {
 
     let renderedDaysOfWeek = [];
     if(isSingleDay){
-        renderedDaysOfWeek = <div className='flex justify-center text-lg'>{dateAndTime.dayString}</div>
+        renderedDaysOfWeek = <div className='flex justify-center flex-grow text-lg'>{dateAndTime.dayString}</div>
     } else {
         selectedDate = new Date(selectedDate.setDate(selectedDate.getDate() - selectedDate.getDay()));
         for(let i = 0; i < 7; i++) {
             const prettyDate = convertDateAndTime(new Date(selectedDate));
-            renderedDaysOfWeek.push(<div className='flex justify-center text-lg w-56'>{prettyDate.dayString}</div>);
+            renderedDaysOfWeek.push(<div key={i} className='flex justify-center flex-grow text-lg'>{prettyDate.dayString}</div>);
             selectedDate = new Date(selectedDate.setDate(selectedDate.getDate() + 1));
         }
     }
 
     return(
-        <div className='flex justify-center'>
+        <div className='flex justify-center w-full'>
             {renderedDaysOfWeek}
         </div>
     );

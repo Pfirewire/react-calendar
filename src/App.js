@@ -16,7 +16,7 @@ function App() {
                 <Sidebar className='w-20 mt-24' />
 
                 {/*Month, Week, and Page view routes*/}
-                <div className='grow flex justify-center'>
+                <div className='grow flex justify-center mx-12'>
                     <Route path='/'>
                         <MonthPage />
                     </Route>
