@@ -19,8 +19,8 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date, appointments, ...rest
         'border-2 border-slate-400 w-full h-full overflow-auto',
         {
             'bg-gray-700': prettyDate.month !== month,
-            'mx-auto h-screen w-full flex-grow': isSingleDay,
-            'flex-grow': isSingleWeek || isSingleDay
+            'mx-auto h-screen w-full grow': isSingleDay,
+            'grow': isSingleWeek || isSingleDay
         }
     );
 

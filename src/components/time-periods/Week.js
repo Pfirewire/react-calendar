@@ -1,8 +1,17 @@
 import Day from "./Day";
-import app from "../../App";
 import {filterAppointmentsToDay} from "../../util/appointmentMethods";
+import className from 'classnames';
 
-function Week({ monthWeek, startDate, appointments }) {
+function Week({ monthWeek, startDate, appointments, weeksInMonth }) {
+    const classes = className(
+        'flex flex-row items-center justify-center w-full h-full min-h-[9rem]',
+        {
+            'h-[calc(100%/4)]': weeksInMonth === 4,
+            'h-[calc(100%/5)]': weeksInMonth === 5,
+            'h-[calc(100%/6)]': weeksInMonth === 6,
+        }
+    );
+
     const renderedDays = () => {
         let date = new Date(startDate);
         const content = [];
@@ -18,7 +27,7 @@ function Week({ monthWeek, startDate, appointments }) {
     };
 
     return(
-        <div className='flex flex-row items-center justify-center w-full flex-grow min-h-[9rem]'>
+        <div className={classes}>
             {renderedDays()}
         </div>
     );

@@ -90,6 +90,17 @@ function prettyDuration(durationInMinutes) {
         hour: Math.floor(durationInMinutes / 60),
         minute: durationInMinutes % 60
     };
-};
+}
 
-export { convertDateAndTime, getDateObject, prettyDuration };
+function weeksInMonth(date) {
+    const ourDate = new Date(date)
+    let weeks = 0;
+    let newDate = new Date();
+    do {
+        weeks++;
+        newDate = new Date(ourDate.setDate(ourDate.getDate() - ourDate.getDay() + 7));
+    } while(newDate.getMonth() === date.getMonth())
+    return weeks;
+}
+
+export { convertDateAndTime, getDateObject, prettyDuration, weeksInMonth };

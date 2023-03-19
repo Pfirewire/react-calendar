@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {setDay} from "../../store";
 import {filterAppointmentsToWeek} from "../../util/appointmentMethods";
+import {weeksInMonth} from "../../util/conversionMethods";
 
 
 function Month({ appointments }) {
@@ -15,18 +16,17 @@ function Month({ appointments }) {
 
     const renderedWeeks = () => {
         let tempDate = new Date(dateAndTime.year, dateAndTime.month, dateAndTime.day);
-        const currentMonth = tempDate.getMonth();
+        const weeks = weeksInMonth(tempDate);
         let content = [];
         let monthWeek = 0;
         let startDate = tempDate.setDate(tempDate.getDate() - tempDate.getDay() - 1);
-        do {
-
+        for(let i=0; i<weeks; i++) {
             let appointmentDate = new Date(tempDate.getFullYear(), tempDate.getMonth(), tempDate.getDate());
             appointmentDate = new Date(appointmentDate.setDate(appointmentDate.getDate() + 1));
-            content.push(<Week key={monthWeek} monthWeek={monthWeek+1} startDate={startDate} appointments={filterAppointmentsToWeek(appointments, appointmentDate)} />);
+            content.push(<Week key={monthWeek} monthWeek={monthWeek+1} weeksInMonth={weeks} startDate={startDate} appointments={filterAppointmentsToWeek(appointments, appointmentDate)} />);
             monthWeek++;
             startDate = tempDate.setDate(tempDate.getDate() + 7);
-        } while (tempDate.getMonth() === currentMonth)
+        }
         return content;
     };
 
