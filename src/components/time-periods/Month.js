@@ -31,7 +31,7 @@ function Month({ appointments }) {
     };
 
     return (
-        <div className='w-full'>
+        <div className='w-full flex flex-col h-full'>
             {renderedWeeks()}
         </div>
     );

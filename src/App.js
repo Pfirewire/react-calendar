@@ -11,22 +11,20 @@ import CurrentDateAndTime from "./components/CurrentDateAndTime";
 function App() {
 
     return(
-        <div>
-            <div className='flex flex-row'>
-                <Sidebar className='w-20 mt-24' />
+        <div className='flex flex-row h-screen'>
+            <Sidebar className='w-20 mt-24' />
 
-                {/*Month, Week, and Page view routes*/}
-                <div className='grow flex justify-center mx-12' style={{minWidth: 100+'rem'}}>
-                    <Route path='/'>
-                        <MonthPage />
-                    </Route>
-                    <Route path='/week'>
-                        <WeekPage />
-                    </Route>
-                    <Route path='/day'>
-                        <DayPage />
-                    </Route>
-                </div>
+            {/*Month, Week, and Page view routes*/}
+            <div className='grow flex justify-center mx-12' style={{minWidth: 100+'rem'}}>
+                <Route path='/'>
+                    <MonthPage />
+                </Route>
+                <Route path='/week'>
+                    <WeekPage />
+                </Route>
+                <Route path='/day'>
+                    <DayPage />
+                </Route>
             </div>
         </div>
     );

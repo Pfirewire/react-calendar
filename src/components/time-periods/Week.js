@@ -18,7 +18,7 @@ function Week({ monthWeek, startDate, appointments }) {
     };
 
     return(
-        <div className='flex flex-row items-center justify-center w-full'>
+        <div className='flex flex-row items-center justify-center w-full flex-grow min-h-[9rem]'>
             {renderedDays()}
         </div>
     );
