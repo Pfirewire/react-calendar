@@ -1,5 +1,5 @@
 import {useSelector} from "react-redux";
-import {convertDateAndTime} from "../methods/conversionMethods";
+import {convertDateAndTime} from "../util/conversionMethods";
 
 
 function DaysOfWeekHeader({ isSingleDay }) {

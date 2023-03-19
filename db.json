@@ -4,8 +4,8 @@
       "title": "Second duration test",
       "date": "2023-03-01",
       "start": "0000",
-      "end": "0800",
-      "duration": 480,
+      "end": "0045",
+      "duration": 45,
       "notes": "test",
       "id": 1
     },
@@ -26,6 +26,15 @@
       "duration": 165,
       "notes": "test",
       "id": 3
+    },
+    {
+      "title": "This won't show",
+      "date": "2023-04-01",
+      "start": "0000",
+      "end": "0015",
+      "duration": 15,
+      "notes": "fdsa",
+      "id": 4
     }
   ]
 }

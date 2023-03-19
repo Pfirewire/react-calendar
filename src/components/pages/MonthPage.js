@@ -4,7 +4,7 @@ import { useFetchAppointmentsQuery } from "../../store";
 import Header from "../Header";
 import Month from "../time-periods/Month";
 import {useEffect} from "react";
-import {filterAppointmentsToMonth} from "../../methods/appointmentMethods";
+import {filterAppointmentsToMonth} from "../../util/appointmentMethods";
 import DaysOfWeekHeader from "../DaysOfWeekHeader";
 
 function MonthPage() {

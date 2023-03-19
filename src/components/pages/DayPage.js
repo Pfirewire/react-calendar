@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {incrementDay, decrementDay, useFetchAppointmentsQuery} from "../../store";
 import Header from "../Header";
 import Day from '../time-periods/Day';
-import {filterAppointmentsToDay} from "../../methods/appointmentMethods";
+import {filterAppointmentsToDay} from "../../util/appointmentMethods";
 import DaysOfWeekHeader from "../DaysOfWeekHeader";
 
 function DayPage() {

@@ -1,5 +1,5 @@
 import AppointmentFormTime from "./AppointmentFormTime";
-import {updateDuration} from "../../methods/appointmentMethods";
+import {updateDuration} from "../../util/appointmentMethods";
 import {useEffect} from "react";
 
 

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {convertDateAndTime, getDateObject} from "../../methods/conversionMethods";
+import {convertDateAndTime, getDateObject} from "../../util/conversionMethods";
 
 const setSelectedDate = (date) => {
     date.setDate(1);

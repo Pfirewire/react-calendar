@@ -1,4 +1,4 @@
-import { convertDateAndTime } from "../../methods/conversionMethods";
+import { convertDateAndTime } from "../../util/conversionMethods";
 import { useSelector } from "react-redux";
 import className from 'classnames';
 import Appointment from "../appointments/Appointment";

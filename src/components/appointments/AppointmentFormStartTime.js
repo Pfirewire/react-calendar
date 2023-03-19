@@ -1,4 +1,4 @@
-import {mapAppointmentTimes} from "../../methods/appointmentMethods";
+import {mapAppointmentTimes} from "../../util/appointmentMethods";
 
 
 function AppointmentFormStartTime({ form, handleChange }) {

@@ -1,6 +1,6 @@
 import Day from "./Day";
 import app from "../../App";
-import {filterAppointmentsToDay} from "../../methods/appointmentMethods";
+import {filterAppointmentsToDay} from "../../util/appointmentMethods";
 
 function Week({ monthWeek, startDate, appointments }) {
     const renderedDays = () => {

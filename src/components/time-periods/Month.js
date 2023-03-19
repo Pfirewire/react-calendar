@@ -2,7 +2,7 @@ import Week from "./Week";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {setDay} from "../../store";
-import {filterAppointmentsToWeek} from "../../methods/appointmentMethods";
+import {filterAppointmentsToWeek} from "../../util/appointmentMethods";
 
 
 function Month({ appointments }) {

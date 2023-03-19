@@ -1,4 +1,4 @@
-import { prettyDuration } from "../../methods/conversionMethods";
+import { prettyDuration } from "../../util/conversionMethods";
 
 function AppointmentDuration({ form }) {
     const renderedDuration = () => {
