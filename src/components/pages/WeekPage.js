@@ -4,6 +4,7 @@ import Header from "../Header";
 import Week from "../time-periods/Week";
 import {filterAppointmentsToWeek} from "../../util/appointmentMethods";
 import DaysOfWeekHeader from "../DaysOfWeekHeader";
+import TimeBlocks from "../time-periods/TimeBlocks";
 
 function WeekPage() {
     const dispatch = useDispatch();
@@ -32,7 +33,10 @@ function WeekPage() {
         <div className='flex flex-col items-end w-full'>
             <Header handlePrev={handlePrevWeek} handleNext={handleNextWeek} />
             <DaysOfWeekHeader isSingleDay={false} />
-            <Week appointments={appointments} startDate={selectedDate.setDate(selectedDate.getDate() - selectedDate.getDay() - 1)} />
+            <div className='w-full h-full flex'>
+                <TimeBlocks />
+                <Week appointments={appointments} startDate={selectedDate.setDate(selectedDate.getDate() - selectedDate.getDay() - 1)} />
+            </div>
         </div>
     );
 }

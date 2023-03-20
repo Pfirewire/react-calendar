@@ -62,7 +62,7 @@ function mapAppointmentTimes(time, index) {
         value={timeString}
     >
         {time.hour > 12
-            ? `${time.hour - 12}:${time.minute.toString().padStart(2, '0')} pm`
+            ? `${time.hour === 12 ? 12 : time.hour - 12}:${time.minute.toString().padStart(2, '0')} pm`
             : `${time.hour === 0 ? 12 : time.hour}:${time.minute.toString().padStart(2, '0')} am`}
     </option>
 }
