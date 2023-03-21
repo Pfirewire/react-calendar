@@ -13,20 +13,20 @@ function TimeBlocks() {
             hour: 0,
             minute: 0
         };
-        for(let i = 0; i < 95; i++) {
+        for(let i = 0; i < 47; i++) {
             if(time.minute === 60){
                 time.minute = 0;
                 time.hour += 1;
             }
-            timeBlocks.push(<div>{createPrettyHourAndMinute(time)}</div>);
-            time.minute += 15;
+            timeBlocks.push(<div className='h-10 flex justify-end items-center'>{createPrettyHourAndMinute(time)}</div>);
+            time.minute += 30;
         }
         console.log(timeBlocks);
         return timeBlocks;
     }
 
     return(
-        <div className='w-40 h-4 flex flex-col justify-center items-end'>
+        <div className='w-20 mt-16 mr-4'>
             {renderedTimeBlocks()}
         </div>
     );
