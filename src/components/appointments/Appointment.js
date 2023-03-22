@@ -1,5 +1,6 @@
 import {useState} from "react";
 import AppointmentModal from "./AppointmentModal";
+import {findHeight, findTopOffset} from "../../util/appointmentMethods";
 
 
 function Appointment({ appointment }) {
@@ -13,9 +14,15 @@ function Appointment({ appointment }) {
         await setShowEditModal(false);
     };
 
+    const appointmentSizeStyling = () => {
+        const topOffset = findTopOffset(appointment.start);
+        const height = findHeight(appointment.duration);
+        return `top-[${topOffset}] h-[${height}]`;
+    }
+
     return(
         <div>
-            <div className='flex justify-between w-full bg-green-300 rounded my-1 h-6 cursor-pointer text-black' onClick={handleOpenModal}>
+            <div className={`flex justify-between w-full bg-green-300 rounded my-1 cursor-pointer text-black relative ${appointmentSizeStyling()}`} onClick={handleOpenModal}>
                 <div className='ml-1 overflow-hidden text-ellipsis'>
                     {appointment.title}
                 </div>

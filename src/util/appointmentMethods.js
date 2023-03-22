@@ -68,10 +68,20 @@ function mapAppointmentTimes(time, index) {
     </option>
 }
 
+function findTopOffset(start) {
+
+}
+
+function findHeight(duration) {
+
+}
+
 export {
     filterAppointmentsToDay,
     filterAppointmentsToWeek,
     filterAppointmentsToMonth,
     updateDuration,
-    mapAppointmentTimes
+    mapAppointmentTimes,
+    findTopOffset,
+    findHeight
 };
