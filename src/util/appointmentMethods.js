@@ -69,7 +69,12 @@ function mapAppointmentTimes(time, index) {
 }
 
 function findTopOffset(start) {
-
+    const startHour = parseInt(start.substring(0, 2));
+    const startMinute = parseInt(start.substring(2, 4));
+    let offset = 24;
+    offset += (startHour + 1) * 80;
+    offset += (startMinute / 15) * 20;
+    return `${offset}px`
 }
 
 function findHeight(duration) {
