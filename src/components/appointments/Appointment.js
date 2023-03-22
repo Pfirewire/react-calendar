@@ -17,12 +17,15 @@ function Appointment({ appointment }) {
     const appointmentSizeStyling = () => {
         const topOffset = findTopOffset(appointment.start);
         const height = findHeight(appointment.duration);
-        return `top-[${topOffset}] h-[${height}]`;
+        return {
+            top: topOffset,
+            height: height
+        };
     }
 
     return(
-        <div>
-            <div className={`flex justify-between w-full bg-green-300 rounded my-1 cursor-pointer text-black relative ${appointmentSizeStyling()}`} onClick={handleOpenModal}>
+        <div className={`relative`}>
+            <div className={`absolute flex justify-between w-full bg-green-300 rounded my-1 cursor-pointer text-black`} style={appointmentSizeStyling()} onClick={handleOpenModal}>
                 <div className='ml-1 overflow-hidden text-ellipsis'>
                     {appointment.title}
                 </div>
