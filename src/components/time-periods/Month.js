@@ -23,7 +23,10 @@ function Month({ appointments }) {
         for(let i=0; i<weeks; i++) {
             let appointmentDate = new Date(tempDate.getFullYear(), tempDate.getMonth(), tempDate.getDate());
             appointmentDate = new Date(appointmentDate.setDate(appointmentDate.getDate() + 1));
-            content.push(<Week key={monthWeek} monthWeek={monthWeek+1} weeksInMonth={weeks} startDate={startDate} appointments={filterAppointmentsToWeek(appointments, appointmentDate)} />);
+            let filteredAppointments = [];
+            filteredAppointments = filterAppointmentsToWeek(appointments, appointmentDate);
+            console.log(filteredAppointments);
+            content.push(<Week key={monthWeek} monthWeek={monthWeek+1} weeksInMonth={weeks} startDate={startDate} appointments={filteredAppointments} />);
             monthWeek++;
             startDate = tempDate.setDate(tempDate.getDate() + 7);
         }
