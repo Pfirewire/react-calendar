@@ -12,9 +12,9 @@
     {
       "title": "Remnant with Lily",
       "date": "2023-03-16",
-      "start": "1800",
+      "start": "1500",
       "end": "1915",
-      "duration": 75,
+      "duration": 255,
       "notes": "Fun times? x2",
       "id": 2
     },
@@ -71,6 +71,33 @@
       "duration": 885,
       "notes": "asd",
       "id": 8
+    },
+    {
+      "title": "Tester",
+      "date": "2023-03-12",
+      "start": "0330",
+      "end": "0630",
+      "duration": 180,
+      "notes": "test",
+      "id": 9
+    },
+    {
+      "title": "Tester",
+      "date": "2023-03-12",
+      "start": "0330",
+      "end": "0500",
+      "duration": 90,
+      "notes": "test",
+      "id": 10
+    },
+    {
+      "title": "test",
+      "date": "2023-03-13",
+      "start": "0200",
+      "end": "0345",
+      "duration": 105,
+      "notes": "test",
+      "id": 11
     }
   ]
 }

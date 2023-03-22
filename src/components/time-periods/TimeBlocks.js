@@ -18,7 +18,7 @@ function TimeBlocks() {
                 time.minute = 0;
                 time.hour += 1;
             }
-            timeBlocks.push(<div className='h-10 flex justify-end items-center'>{createPrettyHourAndMinute(time)}</div>);
+            timeBlocks.push(<div key={i} className='h-10 flex justify-end items-center'>{createPrettyHourAndMinute(time)}</div>);
             time.minute += 30;
         }
         console.log(timeBlocks);
