@@ -21,7 +21,6 @@ function TimeBlocks() {
             timeBlocks.push(<div key={i} className='h-10 flex justify-end items-center'>{createPrettyHourAndMinute(time)}</div>);
             time.minute += 30;
         }
-        console.log(timeBlocks);
         return timeBlocks;
     }
 

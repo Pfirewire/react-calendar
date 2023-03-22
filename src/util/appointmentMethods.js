@@ -13,8 +13,6 @@ function filterAppointmentsToWeek(appointments, selectedDate) {
         for(let i = 0; i < 7; i++) {
             let appointmentDate = new Date(appointment.date);
             appointmentDate = new Date(appointmentDate.setDate(appointmentDate.getDate()+1));
-            console.log(appointment);
-            console.log(appointmentDate);
             if(dateMatches(date, appointmentDate)) {
                 contains = true;
             }

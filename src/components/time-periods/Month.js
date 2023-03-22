@@ -25,7 +25,6 @@ function Month({ appointments }) {
             appointmentDate = new Date(appointmentDate.setDate(appointmentDate.getDate() + 1));
             let filteredAppointments = [];
             filteredAppointments = filterAppointmentsToWeek(appointments, appointmentDate);
-            console.log(filteredAppointments);
             content.push(<Week key={monthWeek} monthWeek={monthWeek+1} weeksInMonth={weeks} startDate={startDate} appointments={filteredAppointments} />);
             monthWeek++;
             startDate = tempDate.setDate(tempDate.getDate() + 7);
