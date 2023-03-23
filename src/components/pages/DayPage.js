@@ -4,6 +4,7 @@ import Header from "../Header";
 import Day from '../time-periods/Day';
 import {filterAppointmentsToDay} from "../../util/appointmentMethods";
 import DaysOfWeekHeader from "../DaysOfWeekHeader";
+import TimeBlocks from "../time-periods/TimeBlocks";
 
 function DayPage() {
     const dateAndTime = useSelector(state => state.selectedDateAndTime.dateAndTime);
@@ -31,8 +32,13 @@ function DayPage() {
     return(
         <div className='flex flex-col items-end w-full'>
             <Header handlePrev={handlePrevDay} handleNext={handleNextDay} />
-            <DaysOfWeekHeader isSingleDay={true} />
-            <Day isSingleDay date={selectedDate} appointments={appointments} />
+            <div className='w-full flex items-stretch'>
+                <TimeBlocks />
+                <div className='w-full'>
+                    <DaysOfWeekHeader isSingleDay={true} />
+                    <Day isSingleDay date={selectedDate} appointments={appointments} />
+                </div>
+            </div>
         </div>
     );
 }
