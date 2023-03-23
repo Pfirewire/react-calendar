@@ -16,10 +16,10 @@ function Day({ firstWeek, isSingleWeek, isSingleDay, date, appointments, ...rest
     const showMonth = prettyDate.day === 1;
     const classes = className(
         rest.className,
-        'border-2 border-slate-400 w-full h-full overflow-auto',
+        'border-2 border-slate-400 h-full w-full overflow-auto',
         {
             'bg-gray-700': prettyDate.month !== month,
-            'mx-auto h-screen w-full grow': isSingleDay,
+            'mx-auto': isSingleDay,
             'grow': isSingleWeek || isSingleDay
         }
     );
