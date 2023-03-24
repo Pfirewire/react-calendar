@@ -34,9 +34,9 @@ function DayPage() {
             <Header handlePrev={handlePrevDay} handleNext={handleNextDay} />
             <div className='w-full flex items-stretch'>
                 <TimeBlocks />
-                <div className='w-full'>
+                <div className='w-full flex flex-col'>
                     <DaysOfWeekHeader isSingleDay={true} />
-                    <Day isSingleDay date={selectedDate} appointments={appointments} />
+                    <Day className='grow' isSingleDay date={selectedDate} appointments={appointments} />
                 </div>
             </div>
         </div>
