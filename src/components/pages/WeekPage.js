@@ -34,9 +34,9 @@ function WeekPage() {
             <Header handlePrev={handlePrevWeek} handleNext={handleNextWeek} />
             <div className='w-full flex items-stretch'>
                 <TimeBlocks />
-                <div className='w-full h-full'>
+                <div className='w-full h-full flex flex-col'>
                     <DaysOfWeekHeader isSingleDay={false} />
-                    <Week appointments={appointments} startDate={selectedDate.setDate(selectedDate.getDate() - selectedDate.getDay() - 1)} />
+                    <Week className='grow' appointments={appointments} startDate={selectedDate.setDate(selectedDate.getDate() - selectedDate.getDay() - 1)} />
                 </div>
             </div>
         </div>

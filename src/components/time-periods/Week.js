@@ -2,9 +2,10 @@ import Day from "./Day";
 import {filterAppointmentsToDay} from "../../util/appointmentMethods";
 import className from 'classnames';
 
-function Week({ monthWeek, startDate, appointments, weeksInMonth }) {
+function Week({ monthWeek, startDate, appointments, weeksInMonth, ...rest }) {
     const classes = className(
-        'flex flex-row items-center justify-center w-full h-full min-h-[9rem]',
+        'flex flex-row items-center justify-center w-full min-h-[9rem]',
+        rest.className,
         {
             'h-[calc(100%/4)]': weeksInMonth === 4,
             'h-[calc(100%/5)]': weeksInMonth === 5,
