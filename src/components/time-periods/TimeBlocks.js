@@ -13,7 +13,7 @@ function TimeBlocks() {
             hour: 0,
             minute: 0
         };
-        for(let i = 0; i < 47; i++) {
+        for(let i = 0; i < 48; i++) {
             if(time.minute === 60){
                 time.minute = 0;
                 time.hour += 1;
