@@ -4,8 +4,8 @@
       "title": "Second duration test",
       "date": "2023-03-01",
       "start": "0000",
-      "end": "0045",
-      "duration": 45,
+      "end": "0030",
+      "duration": 30,
       "notes": "test",
       "id": 1
     },

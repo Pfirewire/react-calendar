@@ -1,5 +1,6 @@
 import {useState} from "react";
 import AppointmentModal from "./AppointmentModal";
+import {timeStringToPrettyTimeString} from "../../util/appointmentMethods";
 
 
 function AppointmentMini({ appointment }) {
@@ -20,7 +21,7 @@ function AppointmentMini({ appointment }) {
                     {appointment.title}
                 </div>
                 <div className='mr-1'>
-                    {appointment.start}
+                    {timeStringToPrettyTimeString(appointment.start)}}
                 </div>
             </div>
             {showModal && <AppointmentModal appointment={appointment} handleClose={handleCloseModal} />}

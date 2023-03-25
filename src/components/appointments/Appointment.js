@@ -1,6 +1,6 @@
 import {useState} from "react";
 import AppointmentModal from "./AppointmentModal";
-import {findHeight, findTopOffset} from "../../util/appointmentMethods";
+import {findHeight, findTopOffset, timeStringToPrettyTimeString} from "../../util/appointmentMethods";
 
 
 function Appointment({ appointment }) {
@@ -30,7 +30,7 @@ function Appointment({ appointment }) {
                     {appointment.title}
                 </div>
                 <div className='mr-1'>
-                    {appointment.start}
+                    {timeStringToPrettyTimeString(appointment.start)} - {timeStringToPrettyTimeString(appointment.end)}
                 </div>
             </div>
             {showEditModal && <AppointmentModal appointment={appointment} handleClose={handleCloseModal} />}
