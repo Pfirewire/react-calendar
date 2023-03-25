@@ -82,6 +82,14 @@ function findHeight(duration) {
     return `${height}px`;
 }
 
+function timeStringToPrettyTimeString(timeString) {
+    const hour = parseInt(timeString.substring(0,2));
+    const minute = parseInt(timeString.substring(2,4));
+    return hour > 12
+        ? `${hour === 12 ? 12 : hour - 12}:${minute.toString().padStart(2, '0')} pm`
+        : `${hour === 0 ? 12 : hour}:${minute.toString().padStart(2, '0')} am`
+}
+
 export {
     filterAppointmentsToDay,
     filterAppointmentsToWeek,
@@ -89,5 +97,6 @@ export {
     updateDuration,
     mapAppointmentTimes,
     findTopOffset,
-    findHeight
+    findHeight,
+    timeStringToPrettyTimeString
 };
