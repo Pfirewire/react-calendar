@@ -29,8 +29,8 @@ function Appointment({ appointment }) {
                 <div className='ml-1 overflow-hidden text-ellipsis'>
                     {appointment.title}
                 </div>
-                <div className='mr-1'>
-                    {timeStringToPrettyTimeString(appointment.start)} - {timeStringToPrettyTimeString(appointment.end)}
+                <div className='mr-1 text-sm'>
+                    {timeStringToPrettyTimeString(appointment.start)}-{timeStringToPrettyTimeString(appointment.end)}
                 </div>
             </div>
             {showEditModal && <AppointmentModal appointment={appointment} handleClose={handleCloseModal} />}

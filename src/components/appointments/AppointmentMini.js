@@ -21,7 +21,7 @@ function AppointmentMini({ appointment }) {
                     {appointment.title}
                 </div>
                 <div className='mr-1'>
-                    {timeStringToPrettyTimeString(appointment.start)}}
+                    {timeStringToPrettyTimeString(appointment.start)}
                 </div>
             </div>
             {showModal && <AppointmentModal appointment={appointment} handleClose={handleCloseModal} />}
