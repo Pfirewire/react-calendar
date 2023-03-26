@@ -25,7 +25,7 @@ function Appointment({ appointment }) {
 
     return(
         <div className={`relative`}>
-            <div className={`absolute flex justify-between w-full bg-green-300 rounded my-1 cursor-pointer text-black`} style={appointmentSizeStyling()} onClick={handleOpenModal}>
+            <div className={`absolute w-full bg-green-300 rounded my-1 cursor-pointer text-black`} style={appointmentSizeStyling()} onClick={handleOpenModal}>
                 <div className='ml-1 overflow-hidden text-ellipsis'>
                     {appointment.title}
                 </div>
