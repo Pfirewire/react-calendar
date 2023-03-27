@@ -19,7 +19,7 @@ function DaysOfWeekHeader({ isSingleDay }) {
     }
 
     return(
-        <div className='flex justify-center w-full'>
+        <div className='flex justify-center w-full fixed top-0'>
             {renderedDaysOfWeek}
         </div>
     );

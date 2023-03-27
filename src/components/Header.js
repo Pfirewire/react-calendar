@@ -43,7 +43,7 @@ function Header({ handlePrev, handleNext }) {
     );
 
     return (
-        <div className='flex flex-row items-center w-full mb-2'>
+        <div className='flex flex-row items-center w-full mb-2 sticky top-0'>
             {addAppointmentButtonAndModal}
             {currentMonthAndYear}
             {prevAndNextButtons}

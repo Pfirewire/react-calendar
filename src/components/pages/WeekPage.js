@@ -30,7 +30,7 @@ function WeekPage() {
     }
 
     return(
-        <div className='flex flex-col items-end w-full'>
+        <div className='flex flex-col items-end w-full relative'>
             <Header handlePrev={handlePrevWeek} handleNext={handleNextWeek} />
             <div className='w-full flex items-stretch'>
                 <TimeBlocks />
